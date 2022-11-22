@@ -1,0 +1,8 @@
+.greeting{
+    font-size: 180%;
+    font-weight: 500;
+    color: white;
+    text-align: center;
+    background-color: rgb(29, 29, 29);
+    margin-top: 3%;
+}
