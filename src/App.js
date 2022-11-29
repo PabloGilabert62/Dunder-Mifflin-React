@@ -1,23 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+// eslint-disable-next-line
+import React, { Component }  from 'react';
+import Navbar from './components/Navbar/Navbar';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import Counter from './components/Counter/Counter';
 
 function App() {
+
+  const handleOnAdd = (quantity) => {
+    alert(quantity + " items added to cart");
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <Navbar/>
+      <ItemListContainer text={"Welcome to Dunder Mufflin!"}/>
+      <ItemListContainer text={"See our products below!"}/>
+
+      <Counter onAdd={handleOnAdd} stock={5}/>
+
+      <ItemListContainer text={"Stock available: 5"}/>
+
     </div>
   );
 }

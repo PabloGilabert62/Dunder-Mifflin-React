@@ -1,0 +1,18 @@
+.cartIcon{
+    border-radius: 50%;
+    height: 50%;
+    width: 50%;
+}
+
+.cartButton{
+    background-color: rgb(6, 76, 156);
+    color: white;
+    border: none;
+}
+
+.cartIcon:hover{
+    height: 65%;
+    width: 65%;
+    box-shadow: 0px 0px 30px white;
+    transition: all 0.5s;
+}

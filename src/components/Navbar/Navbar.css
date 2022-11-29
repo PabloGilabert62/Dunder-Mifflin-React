@@ -1,0 +1,37 @@
+/*
+    Light grey: rgb(190, 190, 190);
+    Dark grey: rgb(29, 29, 29);
+    Light blue: rgb(6, 76, 156);
+    Dark blue: rgb(4, 4, 66);
+*/
+
+html{
+    background-color: rgb(29, 29, 29);
+}
+
+.navbar-{
+    font-size: 150%;
+    background-color: rgb(6, 76, 156);
+    height: 120px;
+    width: 100%;
+}
+
+.flexCenter{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btnNav{
+    border: none;
+    font-weight: 500;
+    color: white;
+    background-color: rgb(6, 76, 156);
+    font-size: 100%;
+}
+
+.btnNav:hover{
+    font-size: 140%;
+    transition: all 0.6s;
+}
