@@ -8,7 +8,6 @@
     background-color: rgb(6, 76, 156);
     color: white;
     border: none;
-<<<<<<< HEAD
 }
 
 .cartIcon:hover{
@@ -16,6 +15,4 @@
     width: 65%;
     box-shadow: 0px 0px 30px white;
     transition: all 0.5s;
-=======
->>>>>>> 4d8ec59abd9dcbf19e1a950fc29e02a7684fffed
 }

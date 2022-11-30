@@ -28,14 +28,10 @@ html{
     font-weight: 500;
     color: white;
     background-color: rgb(6, 76, 156);
-<<<<<<< HEAD
     font-size: 100%;
 }
 
 .btnNav:hover{
     font-size: 140%;
     transition: all 0.6s;
-=======
-    height: 120px;
->>>>>>> 4d8ec59abd9dcbf19e1a950fc29e02a7684fffed
 }
