@@ -1,11 +1,11 @@
 import './App.css';
 // eslint-disable-next-line
 import React, { Component, useEffect }  from 'react';
-import { useState } from 'react';
 
 import Navbar from './components/Navbar/Navbar';
 import Texts from './components/Texts/Texts';
 import ItemContainer from './components/ItemContainer/ItemContainer';
+import Products from './components/Products/Products';
 
 /* -- COMPONENTE -- */
 function App() {
@@ -20,6 +20,7 @@ function App() {
 
       <ItemContainer/>
 
+      <Products/>
     </div>
   );
 }

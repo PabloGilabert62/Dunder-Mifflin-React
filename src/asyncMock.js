@@ -1,5 +1,3 @@
-import React from "react"
-
 const prods = () =>
 [
   {
@@ -63,4 +61,4 @@ export const getProds = () =>
   })
 }
 
-export const getNoteById = () => {}
+export const getProdsById = () => {}
