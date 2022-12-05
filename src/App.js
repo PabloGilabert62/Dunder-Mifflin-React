@@ -1,22 +1,32 @@
+import React from 'react';
 import './App.css';
-// eslint-disable-next-line
-import React, { Component, useEffect }  from 'react';
+import Text from './components/Texts/Texts';
+import NotesContainer from './components/NotesContainer/NotesContainer';
+import NoteDetailContainer from './components/NoteDetailContainer/NoteDetailContainer';
 import Navbar from './components/Navbar/Navbar';
-import Texts from './components/Texts/Texts';
-import ShowProducts from './components/ItemContainer/ItemContainer';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-/* -- COMPONENTE -- */
 function App() {
 
   return (
     <div className="App">
-      
-      <Navbar/>
 
-      <Texts text={"Welcome to Dunder Mufflin!"}/>
-      <Texts text={"See our products below!"}/>
+      <BrowserRouter>
 
-      <ShowProducts/>
+        <Navbar/>
+
+        <Text text={'Welcome to Dunder Mufflin!'}/>
+        <Text text={'See our products below'}/>
+
+        <Routes>
+
+          <Route path='/' element={<NotesContainer/>}/>
+          <Route path='/prods/:alt' element={<NoteDetailContainer/>}/>
+
+        </Routes>
+
+      </BrowserRouter>
+
     </div>
   );
 }
