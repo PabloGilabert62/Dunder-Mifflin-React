@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react';
-import NotesList from '../NotesList/NotesList';
+import ProdsList from '../ProdsList/ProdsList';
 import { getProds, getProdsByTitle } from '../../asyncMock';
 import { useParams } from 'react-router-dom';
+import './GetProds.css'
 import React from 'react';
 
-const NotesContainer = () => {
+
+/* -- GET PRODS FROM MOCK --*/
+const GetProds = () => {
   
     const [prods, setProds] = useState([])
     const { titleId } = useParams()
@@ -39,9 +42,9 @@ const NotesContainer = () => {
 
     return(
         <div>
-           <NotesList prods={prods}/>
+           <ProdsList prods={prods}/>
         </div>
     )
 }
 
-export default NotesContainer
+export default GetProds

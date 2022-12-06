@@ -1,12 +1,13 @@
-import Note from "../Note/Note";
+import CardList from "../CardList/CardList";
 import React from "react";
+import './ProdsList.css';
 
 const NotesList = ({ prods }) => {
     return (
         <div>
             { 
                 prods.map(prods => (
-                    <Note prods={prods} key={prods.id}/>
+                    <CardList prods={prods} key={prods.id}/>
                 )) 
             } 
         </div>

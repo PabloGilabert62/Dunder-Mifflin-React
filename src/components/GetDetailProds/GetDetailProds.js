@@ -2,11 +2,11 @@ import React from 'react';
 import { getProdsByAlt } from '../../asyncMock';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import './NoteDetailContainer.css';
+import './GetDetailProds.css';
 import Counter from '../Counter/Counter';
 
-/* -- EACH DETAIL CARD -- */
-    const NoteDetailContainer = () => {
+/* -- GET EACH DETAIL CARD -- */
+    const GetDetailProds = () => {
         
         const [prods, setProds] = useState({})
         const [isLoading, setIsLoading] = useState(true)
@@ -35,7 +35,7 @@ import Counter from '../Counter/Counter';
         }
 
 
-            /* -- EACH DETAIL CARD -- */
+            /* -- GET EACH DETAIL CARD -- */
             return (
                 <div className='cards-details-flex'>
                     <div className='cards-details'>
@@ -48,4 +48,4 @@ import Counter from '../Counter/Counter';
     }
 /* ------------------ */
 
-export default NoteDetailContainer
+export default GetDetailProds

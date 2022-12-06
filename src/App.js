@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
 import Text from './components/Texts/Texts';
-import NotesContainer from './components/NotesContainer/NotesContainer';
-import NoteDetailContainer from './components/NoteDetailContainer/NoteDetailContainer';
+import GetProds from './components/GetProds/GetProds';
+import GetDetailProds from './components/GetDetailProds/GetDetailProds'
 import Home from './components/Home/Home';
 import Contact from './components/Contact/Contact';
 import Staff from './components/Staff/Staff';
@@ -22,9 +22,11 @@ function App() {
 
         <Routes>
 
-          <Route path='/prods' element={<NotesContainer/>}/>
           <Route path='/home' element={<Home/>}/>
-          <Route path='/prods/:alt' element={<NoteDetailContainer/>}/>
+
+          <Route path='/prods' element={<GetProds/>}/>
+          <Route path='/prods/:alt' element={<GetDetailProds/>}/>
+          
           <Route path='/contact' element={<Contact/>}/>
           <Route path='/staff' element={<Staff/>}/>
           <Route path='/location' element={<Location/>}/>

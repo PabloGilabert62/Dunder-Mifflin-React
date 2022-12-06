@@ -1,8 +1,8 @@
-import './Note.css';
+import './CardList.css';
 import { Link } from 'react-router-dom';
 import React from 'react';
 
-const Note = ({ prods }) => {
+const CardList = ({ prods }) => {
 
     return(
         /* -- ALL CARDS -- */
@@ -20,4 +20,4 @@ const Note = ({ prods }) => {
     )
 }
 
-export default Note
+export default CardList
