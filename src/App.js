@@ -23,7 +23,7 @@ function App() {
         <Routes>
 
           <Route path='/home' element={<Home/>}/>
-
+          
           <Route path='/prods' element={<GetProds/>}/>
           <Route path='/prods/:alt' element={<GetDetailProds/>}/>
           
@@ -32,7 +32,6 @@ function App() {
           <Route path='/location' element={<Location/>}/>
 
         </Routes>
-
       </BrowserRouter>
     </div>
   );

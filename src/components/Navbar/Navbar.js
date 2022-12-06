@@ -2,20 +2,22 @@ import React from 'react';
 import './Navbar.css';
 import CartIcon from '../CartIcon/CartIcon';
 import CompanyLogo from '../CompanyLogo/CompanyLogo';
-import { Link } from 'react-router-dom';
+import { NavLink, useNavigate} from 'react-router-dom';
 
-const Navbar = () => 
-{
+const Navbar = () => {
+
+    const navigate = useNavigate();
+
     return( 
         <nav className='navbar- flexCenter'>
 
             <CompanyLogo/>
 
-            <Link className='btnNav' to={`/home`}>Home</Link>
-            <Link className='btnNav' to={`/prods`}>Prods</Link>
-            <Link className='btnNav' to={`/contact`}>Contact</Link>
-            <Link className='btnNav' to={`/staff`}>Staff</Link>
-            <Link className='btnNav' to={`/location`}>Location</Link>
+            <NavLink className={({ isActive }) => isActive? 'ActiveOption' : 'Option'} to={`/home`}>Home</NavLink>
+            <NavLink className={({ isActive }) => isActive? 'ActiveOption' : 'Option'} to={`/prods`}>Prods</NavLink>
+            <NavLink className={({ isActive }) => isActive? 'ActiveOption' : 'Option'} to={`/contact`}>Contact</NavLink>
+            <NavLink className={({ isActive }) => isActive? 'ActiveOption' : 'Option'} to={`/staff`}>Staff</NavLink>
+            <NavLink className={({ isActive }) => isActive? 'ActiveOption' : 'Option'} to={`/location`}>Location</NavLink>
            
             <CartIcon/>
         </nav>
