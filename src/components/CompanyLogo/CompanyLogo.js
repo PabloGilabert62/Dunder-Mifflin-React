@@ -4,7 +4,7 @@ import './CompanyLogo.css';
 const CompanyLogo = () =>
 {
     return(
-        <img className='CompanyLogo' src='./images/DunderMifflinLogo.png' alt='Dunder Mifflin Logo'/>
+        <img className='CompanyLogo' src='/images/DunderMifflinLogo.png' alt='Dunder Mifflin Logo'/>
     )
 }
 

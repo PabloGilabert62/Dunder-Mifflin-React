@@ -1,0 +1,17 @@
+.cards-details{
+    background-color: rgb(6, 76, 156);
+    border: 5px solid rgb(6, 76, 156);
+    border-radius: 8px;
+    width: fit-content;
+    margin-top: 2%;
+    margin-bottom: 5%;
+}
+.cards-details img{
+    width: 220px;
+    height: 220px;
+}
+
+.cards-details-flex{
+    display: flex;
+    justify-content: center;
+}

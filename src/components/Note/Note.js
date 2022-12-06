@@ -5,14 +5,18 @@ import React from 'react';
 const Note = ({ prods }) => {
 
     return(
-        <div key={prods.id} className='cards-grids'>
-            <div className='cards'>
-                <img src={prods.src2} alt={prods.alt}/>
-                <p>{prods.title}</p>
-                <p>{prods.price}</p>
-                <Link to={`/prods/${prods.alt}`}>See more</Link>
+        /* -- ALL CARDS -- */
+        
+            <div className='cards-grids'>
+                <div className='cards'>
+                    <img src={prods.src} alt={prods.alt}/>
+                    <p>{prods.title}</p>
+                    <p>{prods.price}</p>
+                    <Link to={`/prods/${prods.alt}`}>See more</Link>
+                </div>
             </div>
-        </div>
+
+        /* --------------- */
     )
 }
 

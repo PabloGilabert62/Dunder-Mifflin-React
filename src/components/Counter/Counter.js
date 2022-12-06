@@ -6,33 +6,33 @@ const Counter = ({stock}) => {
 
     const [count, setCount] = useState(0);
 
-    /* -- SI EL CONTADOR ES MENOR AL STOCK, SUMARLO -- */
+    /* -- IF THE COUNTER IS MINOR TO THE STOCK, ADD IT UP -- */
     const add = () => { 
         (count < stock) ? setCount(count + 1): setCount(count)
     }
 
-    /* -- SI EL CONTADOR ES MENOR A 0, FIJARLO -- */
+    /* -- IF THE COUNTER IS 0, LOCK IT -- */
     const substract = () => { 
         (count > 0) ? setCount (count - 1) : setCount(count)
     }
-    
-    const reset = () => { setCount (0)}
 
+    /* -- ALERT OF ITEMS ADDED TO CART -- */
     const onAdd = () => {
         alert(count + " items added to cart");
     }
 
     return(
         <div>
-            <h2>{count}</h2>
-
-            <button onClick={() => add()}>add</button>
-
-            <button onClick={() => substract()}>substract</button>
-
-            <button onClick={() => reset()}>reset</button>
-
-            <button onClick={() => onAdd(count)}>Add to cart</button>  
+            <h2 className="font-counter">Items: {count}</h2>
+            <h2 className="font-counter">Max stock: {stock}</h2>
+            
+            <div className="flex-center">
+                <div className="counter">
+                    <button className="counterPlus" onClick={() => add()}>+</button>
+                    <button className="counterAdd" onClick={() => onAdd(count)}>Add to cart</button>
+                    <button className="counterMinus"onClick={() => substract()}>-</button>
+                </div>
+            </div>
         </div>
     )
 }

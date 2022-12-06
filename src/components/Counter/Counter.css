@@ -1,3 +1,32 @@
-.white{
-    color: white;
+.font-counter{
+    font-size: 130%;
+}
+
+.counter{
+    border: 5px solid rgb(4, 4, 66);
+    border-radius: 8px;
+    width: fit-content;
+}
+
+.flex-center{
+    display: flex;
+    justify-content: center;
+}
+
+.counterPlus{
+    border: 2px solid green;
+    border-radius: 2px;
+    background-color: green;
+    width: 25px;
+}
+
+.counterMinus{
+    border: 2px solid red;
+    border-radius: 2px;
+    background-color: red;
+    width: 25px;
+}
+
+.counterAdd{
+    border: 2px solid white;
 }

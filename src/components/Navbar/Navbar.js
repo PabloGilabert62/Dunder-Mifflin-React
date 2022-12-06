@@ -1,8 +1,8 @@
 import React from 'react';
 import './Navbar.css';
-import Button from '../Button/Button';
 import CartIcon from '../CartIcon/CartIcon';
 import CompanyLogo from '../CompanyLogo/CompanyLogo';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => 
 {
@@ -11,11 +11,11 @@ const Navbar = () =>
 
             <CompanyLogo/>
 
-            <Button btnStyle={"btnNav"}>Home</Button>
-            <Button btnStyle={"btnNav"}>Products</Button>
-            <Button btnStyle={"btnNav"}>Contact</Button>
-            <Button btnStyle={"btnNav"}>Staff</Button>
-            <Button btnStyle={"btnNav"}>Location</Button>
+            <Link className='btnNav' to={`/home`}>Home</Link>
+            <Link className='btnNav' to={`/prods`}>Prods</Link>
+            <Link className='btnNav' to={`/contact`}>Contact</Link>
+            <Link className='btnNav' to={`/staff`}>Staff</Link>
+            <Link className='btnNav' to={`/location`}>Location</Link>
            
             <CartIcon/>
         </nav>

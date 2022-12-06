@@ -3,10 +3,10 @@ import React from "react";
 
 const NotesList = ({ prods }) => {
     return (
-        <div key={prods.id}>
+        <div>
             { 
                 prods.map(prods => (
-                    <Note prods={prods}/>
+                    <Note prods={prods} key={prods.id}/>
                 )) 
             } 
         </div>
