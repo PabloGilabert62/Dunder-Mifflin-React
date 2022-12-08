@@ -2,7 +2,7 @@ import React from 'react';
 import './Navbar.css';
 import CartIcon from '../CartIcon/CartIcon';
 import CompanyLogo from '../CompanyLogo/CompanyLogo';
-import { NavLink, useNavigate} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 
 const Navbar = () => {
 
