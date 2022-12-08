@@ -8,7 +8,8 @@ import Contact from './components/Contact/Contact';
 import Staff from './components/Staff/Staff';
 import Location from './components/Location/Location';
 import Navbar from './components/Navbar/Navbar';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Counter from './components/Counter/Counter';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 function App() {
 

@@ -2,8 +2,8 @@ import React from 'react';
 import { getProdsByAlt } from '../../asyncMock';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import './GetDetailProds.css';
 import Counter from '../Counter/Counter';
+import './GetDetailProds.css';
 
 /* -- GET EACH DETAIL CARD -- */
     const GetDetailProds = () => {

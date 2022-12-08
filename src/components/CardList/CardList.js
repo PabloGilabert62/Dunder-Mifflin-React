@@ -6,7 +6,6 @@ const CardList = ({ prods }) => {
 
     return(
         /* -- ALL CARDS -- */
-        
             <div className='cards-grids'>
                 <div className='cards'>
                     <img src={prods.src} alt={prods.alt}/>
@@ -15,7 +14,6 @@ const CardList = ({ prods }) => {
                     <Link to={`/prods/${prods.alt}`}>See more</Link>
                 </div>
             </div>
-
         /* --------------- */
     )
 }

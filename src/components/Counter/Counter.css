@@ -30,3 +30,10 @@
 .counterAdd{
     border: 2px solid white;
 }
+
+input{
+    width: 20%;
+    text-align: center;
+    border: 3px solid rgb(4, 4, 66);
+    border-radius: 8px;
+}
