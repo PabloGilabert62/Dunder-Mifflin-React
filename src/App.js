@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Text from './components/Texts/Texts';
+import Start from './components/Start/Start';
 import GetProds from './components/GetProds/GetProds';
 import GetDetailProds from './components/GetDetailProds/GetDetailProds'
 import Home from './components/Home/Home';
@@ -18,9 +18,9 @@ function App() {
 
         <Navbar/>
 
-        <Text text={'Welcome to Dunder Mufflin!'}/>
-
         <Routes>
+
+          <Route path='/' element={<Start/>}></Route>
 
           <Route path='/home' element={<Home/>}/>
           

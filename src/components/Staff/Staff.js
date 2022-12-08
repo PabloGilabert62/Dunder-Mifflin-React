@@ -4,7 +4,7 @@ import './Staff.css';
 const Staff = () => {
     return(
         <div>
-            <h1>Staff</h1>
+            <h1 className="staff">Staff</h1>
         </div>
     )
 }
