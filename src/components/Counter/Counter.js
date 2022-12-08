@@ -1,12 +1,10 @@
-import { useState } from "react"; //LIBRERIA DE ESTADOS DE REACT
-import { Link } from "react-router-dom";
+import { useState } from "react";
 import React from "react";
 import "./Counter.css";
 
 const Counter = ({stock}) => {
 
     const [count, setCount] = useState(0);
-    const [btn, setBtn] = useState({});
 
     /* -- IF THE COUNTER IS MINOR TO THE STOCK, ADD IT UP -- */
     const add = () => { 
@@ -23,7 +21,7 @@ const Counter = ({stock}) => {
     }
 
     const onAdd = () => {
-        (count != 0) ? alert(count + " items added to cart") : alert("no items added to cart")
+        (count !== 0) ? alert(count + " items added to cart") : alert("no items added to cart")
     }
 
     return(
