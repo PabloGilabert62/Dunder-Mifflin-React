@@ -6,8 +6,6 @@ import { NavLink, useNavigate} from 'react-router-dom';
 
 const Navbar = () => {
 
-    const navigate = useNavigate();
-
     return( 
         <nav className='navbar- flexCenter'>
 
