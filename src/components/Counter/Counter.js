@@ -28,9 +28,9 @@ const Counter = ({stock}) => {
             
             <div className="flex-center">
                 <div className="counter">
-                    <button className="counterPlus" onClick={() => add()}>+</button>
-                    <button className="counterAdd" onClick={() => onAdd(count)}>Add to cart</button>
-                    <button className="counterMinus"onClick={() => substract()}>-</button>
+                    <button className="counterPlus" onClick={add}>+</button>
+                    <button className="counterAdd" onClick={onAdd}>Add to cart</button>
+                    <button className="counterMinus" onClick={substract}>-</button>
                 </div>
             </div>
         </div>
