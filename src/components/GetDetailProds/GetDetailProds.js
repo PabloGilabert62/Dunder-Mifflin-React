@@ -1,12 +1,16 @@
 import React from 'react';
 import { getProdsByAlt } from '../../asyncMock';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { useContext } from 'react';
+import { CartContext } from '../../App';
 import './GetDetailProds.css';
-import FinalizePurchase from '../FinalizePurchase/FinalizePurchase';
 
 /* -- GET EACH DETAIL CARD -- */
 const GetDetailProds = () => {
+
+    let {items, setItems} = useContext(CartContext)
     
     const [prods, setProds] = useState({})
     const [isLoading, setIsLoading] = useState(true)
@@ -34,6 +38,13 @@ const GetDetailProds = () => {
         return <p className='loading'>Loading...</p>
     }
 
+    const addItems = () => {
+        if(items < prods.stock){
+            setItems([...items, prods.id])
+        } else {
+            setItems(prods.stock)
+        }
+    }
 
     /* -- GET EACH DETAIL CARD -- */
     return (
@@ -41,7 +52,9 @@ const GetDetailProds = () => {
             <div className='cards-details'>
                 <img src={prods.src} alt={prods.alt}/>
                 <h5 className='font-title'>{prods.title} {prods.price}</h5>
-                <FinalizePurchase stock={prods.stock}/>
+                <p className='font-title'>Available stock: {prods.stock}</p>
+                <p className='font-title'>Items added: {items.length}</p>
+                <button onClick={addItems}>Add to cart</button>
             </div>
         </div>
     )
