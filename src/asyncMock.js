@@ -5,8 +5,7 @@ const prods = [
       alt: 'delivery-bag',
       src: '/images/bolsaDelivery.jpg',
       stock: "5",
-      price: '$20',
-      quantity: 0
+      price: '$20'
     }, 
     {
       id: '2',
@@ -14,8 +13,7 @@ const prods = [
       alt: 'paper-box-a4',
       src: '/images/Caja Resma Punax A4.jpg',
       stock: "7",
-      price: '$120',
-      quantity: 0
+      price: '$120'
     },
     {
       id: '3',
@@ -23,8 +21,7 @@ const prods = [
       alt: 'ducting-tape',
       src: '/images/cintaEmbalar.jpg',
       stock: "9",
-      price: '$40',
-      quantity: 0
+      price: '$40'
     },
     {
       id: '4',
@@ -32,8 +29,7 @@ const prods = [
       alt: 'dark-film',
       src: '/images/filmNegro.jpg',
       stock: "3",
-      price: '$70',
-      quantity: 0
+      price: '$70'
     }, 
     {
       id: '5',
@@ -41,8 +37,7 @@ const prods = [
       alt: 'white-film',
       src: '/images/filmTransparente.jpg',
       stock: "6",
-      price: '$60',
-      quantity: 0
+      price: '$60'
     },
     {
       id: '6',
@@ -50,8 +45,7 @@ const prods = [
       alt: 'paper-kraft',
       src: '/images/papelKraft.jpg',
       stock: "11",
-      price: '$15',
-      quantity: 0
+      price: '$15'
     }
   ]
   

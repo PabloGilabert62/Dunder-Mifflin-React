@@ -41,7 +41,7 @@ const GetDetailProds = () => {
 
     const addItems = () => {
 
-        if(items.length < prods.stock){
+        if(count < prods.stock){
             setItems([...items , prods.id])
         }
 
