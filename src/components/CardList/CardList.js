@@ -10,7 +10,6 @@ const CardList = ({ prods }) => {
                 <div className='cards'>
                     <img src={prods.src} alt={prods.alt}/>
                     <p>{prods.title}</p>
-                    <p>{prods.price}</p>
                     <div className='btn-details'>
                         <Link className='btn-details' to={`/prods/${prods.alt}`}>See more</Link>
                     </div>

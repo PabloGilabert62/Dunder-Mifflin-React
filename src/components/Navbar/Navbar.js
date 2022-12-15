@@ -1,10 +1,17 @@
 import React from 'react';
 import './Navbar.css';
-import CartIcon from '../CartIcon/CartIcon';
 import CompanyLogo from '../CompanyLogo/CompanyLogo';
-import {NavLink} from 'react-router-dom';
+import {NavLink, Link} from 'react-router-dom';
+import { useContext } from 'react';
+import { FavoritesContext } from '../../context/FavoritesContext';
+import { CartContext } from '../../context/CartContext';
 
 const Navbar = () => {
+
+    const {favorites} = useContext(FavoritesContext)
+
+    const {getQuantity} = useContext(CartContext)
+    const totalQuantity = getQuantity()
 
     return( 
         <nav className='navbar- flexCenter'>
@@ -16,8 +23,9 @@ const Navbar = () => {
             <NavLink className={({ isActive }) => isActive? 'ActiveOption' : 'Option'} to={`/contact`}>Contact</NavLink>
             <NavLink className={({ isActive }) => isActive? 'ActiveOption' : 'Option'} to={`/staff`}>Staff</NavLink>
             <NavLink className={({ isActive }) => isActive? 'ActiveOption' : 'Option'} to={`/location`}>Location</NavLink>
-           
-            <CartIcon/>
+
+            <Link to='/cart' className='cartButton'>Cart: {totalQuantity}</Link>
+            <Link to='/favorites' className='favButton'>Favorites: {favorites.length}</Link>
         </nav>
     )
 }

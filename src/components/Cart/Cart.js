@@ -1,17 +1,19 @@
+import './Favorites.css';
 import React from 'react';
 import { useContext } from 'react';
-import { CartContext } from '../../context/CartContext/CartContext';
+import { CartContext } from '../../context/CartContext';
 
 const Cart = () => {
 
-    const { cart } = useContext(CartContext)
+    const {items} = useContext(CartContext)
 
-    return (
+    return(
         <div>
-            { cart.map(cart => {
-                return (
+            <h1>Cart: </h1>
+            {items.map(item => {
+                return(
                     <div>
-                        <h1>{cart.title}</h1>
+                        <h5>{item.title}</h5>
                     </div>
                 )
             })}
