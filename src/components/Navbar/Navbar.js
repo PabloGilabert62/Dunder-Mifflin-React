@@ -6,12 +6,10 @@ import { useContext } from 'react';
 import { FavoritesContext } from '../../context/FavoritesContext';
 import { CartContext } from '../../context/CartContext';
 
-const Navbar = () => {
+const Navbar = ({count}) => {
 
     const {favorites} = useContext(FavoritesContext)
-
-    const {getQuantity} = useContext(CartContext)
-    const totalQuantity = getQuantity()
+    const {prods} = useContext(CartContext)
 
     return( 
         <nav className='navbar- flexCenter'>
@@ -24,7 +22,7 @@ const Navbar = () => {
             <NavLink className={({ isActive }) => isActive? 'ActiveOption' : 'Option'} to={`/staff`}>Staff</NavLink>
             <NavLink className={({ isActive }) => isActive? 'ActiveOption' : 'Option'} to={`/location`}>Location</NavLink>
 
-            <Link to='/cart' className='cartButton'>Cart: {totalQuantity}</Link>
+            <Link to='/cart' className='cartButton'>Cart:</Link>
             <Link to='/favorites' className='favButton'>Favorites: {favorites.length}</Link>
         </nav>
     )

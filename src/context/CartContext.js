@@ -1,17 +1,15 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { createContext } from "react";
 
 export const CartContext = createContext()
 
 export const CartProvider = ({children}) => {
 
-    const [items, setItems] = useState([])
+    const {items, setItems} = useState([])
 
     const addItems = (itemsToAdd) => {
-        if(!isInCart(itemsToAdd.id)) {
-            setItems([...items, itemsToAdd])
-        }
+        // setItems([...items, itemsToAdd])
+        console.log(itemsToAdd)
     }
 
     const isInCart = (id) => {
@@ -23,16 +21,8 @@ export const CartProvider = ({children}) => {
         setItems(updatedCart)
     }
 
-    const getQuantity = () => {
-        let totalQuantity = 0;
-
-        items.forEach(item => {
-            totalQuantity += item.quantity
-        })
-    }
-
     return(
-        <CartContext.Provider value={{items, addItems, removeItems, isInCart, getQuantity}}>
+        <CartContext.Provider value={{items, setItems, addItems, removeItems, isInCart}}>
             {children}
         </CartContext.Provider>
     )

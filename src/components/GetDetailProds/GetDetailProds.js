@@ -14,8 +14,9 @@ const GetDetailProds = () => {
     const [isLoading, setIsLoading] = useState(true)
     const {alt} = useParams()
 
+    /* -- TO ADD ITEMS TO FAVORITES -- */
     const {addFavorites, isInFavorites, removeFavorites} = useContext(FavoritesContext)
-    cosnt {} = useContext(CartContext)
+    const {addItems} = useContext(CartContext)
 
     useEffect(() => {
 
@@ -39,18 +40,22 @@ const GetDetailProds = () => {
         return <p className='loading'>Loading...</p>
     }
 
+    /* ------------------------------------------------------------------------------- */
     const isAdded = isInFavorites(prods.id)
 
+    /* ------------------------------------------------------------------------------- */
     const add = () => { 
         (count < prods.stock) ? setCount(count + 1): setCount(count)
     }
 
+    /* ------------------------------------------------------------------------------- */
     const substract = () => { 
         (count > 0) ? setCount (count - 1) : setCount(count)
     }
 
-    const addCart = () => {
-
+    /* ------------------------------------------------------------------------------- */
+    const addToCart = () => {
+        addItems({...prods, count})
     }
    
     /* -- GET EACH DETAIL CARD -- */
@@ -65,13 +70,17 @@ const GetDetailProds = () => {
 
                 <div>
                     <button onClick={() => {add()}} className='buttonPlus'>+</button>
-                    <button onClick={() => {addCart()}}>Add to cart</button>
+
+                    <button onClick={() => {addToCart()}}>Add to cart</button>
+
                     <button onClick={() => {substract()}} className='buttonMinus'>-</button>
                 </div>
 
                 <button onClick={() => {isAdded ? removeFavorites(prods.id) : addFavorites(prods)}} 
+
                     className='buttonFavorite'>
                     {isAdded ? 'Remove from favorites' : 'Add to favorites'}
+
                 </button>
                 
             </div>
