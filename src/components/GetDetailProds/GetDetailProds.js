@@ -77,7 +77,6 @@ const GetDetailProds = () => {
                 {showButton && <div>
                     <button onClick={() => {add()}} className='buttonPlus'>+</button>
 
-                    {/* <button onClick={() => {showButton ? addToCart() : setShowButton(false)}}>Add to cart</button> */}
                     <button onClick={() => {addToCart()}}>Add to cart</button>
 
                     <button onClick={() => {substract()}} className='buttonMinus'>-</button>
