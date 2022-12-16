@@ -14,6 +14,8 @@ const GetDetailProds = () => {
     const [isLoading, setIsLoading] = useState(true)
     const {alt} = useParams()
 
+    const [showButton, setShowButton] = useState(true)
+
     /* -- TO ADD ITEMS TO FAVORITES -- */
     const {addFavorites, isInFavorites, removeFavorites} = useContext(FavoritesContext)
     const {addItems} = useContext(CartContext)
@@ -55,7 +57,10 @@ const GetDetailProds = () => {
 
     /* ------------------------------------------------------------------------------- */
     const addToCart = () => {
-        addItems({...prods, count})
+        if(count != 0){
+            addItems({...prods, count})
+            setShowButton(false)
+        }
     }
    
     /* -- GET EACH DETAIL CARD -- */
@@ -68,14 +73,16 @@ const GetDetailProds = () => {
                 <p className='font-title'>Available stock: {prods.stock}</p>
                 <p className='font-title'>Items added: {count}</p>
 
-                <div>
+                {/* CART BUTTON */}
+                {showButton && <div>
                     <button onClick={() => {add()}} className='buttonPlus'>+</button>
 
-                    <button onClick={() => {addToCart()}}>Add to cart</button>
+                    <button onClick={() => {showButton ? addToCart() : setShowButton(false)}}>Add to cart</button>
 
                     <button onClick={() => {substract()}} className='buttonMinus'>-</button>
-                </div>
+                </div>}
 
+                {/* FAVORITE BUTTON */}
                 <button onClick={() => {isAdded ? removeFavorites(prods.id) : addFavorites(prods)}} 
 
                     className='buttonFavorite'>
