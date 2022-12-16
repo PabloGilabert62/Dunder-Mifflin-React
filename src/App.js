@@ -12,7 +12,7 @@ import Favorites from './components/Favorites/Favorites';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { FavoritesProvider } from './context/FavoritesContext';
 import { CartProvider } from './context/CartContext';
-// import Cart from './components/Cart/Cart';
+import Cart from './components/Cart/Cart';
 
 function App() {
   return (
@@ -30,7 +30,7 @@ function App() {
               <Route path='/staff' element={<Staff/>}/>
               <Route path='/location' element={<Location/>}/>
               <Route path='/favorites' element={<Favorites/>}/>
-              {/* <Route path='/cart' element={<Cart/>}/> */}
+              <Route path='/cart' element={<Cart/>}/>
             </Routes>
           </BrowserRouter>
         </FavoritesProvider>

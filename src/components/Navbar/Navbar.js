@@ -4,12 +4,10 @@ import CompanyLogo from '../CompanyLogo/CompanyLogo';
 import {NavLink, Link} from 'react-router-dom';
 import { useContext } from 'react';
 import { FavoritesContext } from '../../context/FavoritesContext';
-import { CartContext } from '../../context/CartContext';
 
-const Navbar = ({count}) => {
+const Navbar = () => {
 
     const {favorites} = useContext(FavoritesContext)
-    const {prods} = useContext(CartContext)
 
     return( 
         <nav className='navbar- flexCenter'>

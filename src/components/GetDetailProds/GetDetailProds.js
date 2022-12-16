@@ -57,7 +57,7 @@ const GetDetailProds = () => {
 
     /* ------------------------------------------------------------------------------- */
     const addToCart = () => {
-        if(count != 0){
+        if(count !== 0){
             addItems({...prods, count})
             setShowButton(false)
         }
@@ -77,7 +77,8 @@ const GetDetailProds = () => {
                 {showButton && <div>
                     <button onClick={() => {add()}} className='buttonPlus'>+</button>
 
-                    <button onClick={() => {showButton ? addToCart() : setShowButton(false)}}>Add to cart</button>
+                    {/* <button onClick={() => {showButton ? addToCart() : setShowButton(false)}}>Add to cart</button> */}
+                    <button onClick={() => {addToCart()}}>Add to cart</button>
 
                     <button onClick={() => {substract()}} className='buttonMinus'>-</button>
                 </div>}
