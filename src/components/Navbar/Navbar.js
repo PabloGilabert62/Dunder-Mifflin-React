@@ -6,7 +6,7 @@ import { useContext } from 'react';
 import { FavoritesContext } from '../../context/FavoritesContext';
 import { CartContext } from '../../context/CartContext';
 
-const Navbar = () => {
+const Navbar = ({count}) => {
 
     const {favorites} = useContext(FavoritesContext)
 

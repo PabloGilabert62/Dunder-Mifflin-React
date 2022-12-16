@@ -13,7 +13,8 @@ const Favorites = () => {
         {favorites.map(favorite => {
             return(
                 <div>
-                    <h5>{favorite.title}</h5>
+                    <h5>Item: {favorite.title}</h5>
+                    <h5>Price: {favorite.price}</h5>
                 </div>
             )
         })}
