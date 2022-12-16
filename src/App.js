@@ -9,10 +9,10 @@ import Staff from './components/Staff/Staff';
 import Location from './components/Location/Location';
 import Navbar from './components/Navbar/Navbar';
 import Favorites from './components/Favorites/Favorites';
+import Cart from './components/Cart/Cart';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { FavoritesProvider } from './context/FavoritesContext';
 import { CartProvider } from './context/CartContext';
-import Cart from './components/Cart/Cart';
 
 function App() {
   return (

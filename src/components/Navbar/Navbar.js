@@ -6,11 +6,11 @@ import { useContext } from 'react';
 import { FavoritesContext } from '../../context/FavoritesContext';
 import { CartContext } from '../../context/CartContext';
 
-const Navbar = ({count}) => {
+const Navbar = () => {
 
     const {favorites} = useContext(FavoritesContext)
 
-    const {items} = useContext(CartContext)
+    const {items, setItems, addItems} = useContext(CartContext)
 
     return( 
         <nav className='navbar- flexCenter'>

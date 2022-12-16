@@ -23,6 +23,8 @@ export const CartProvider = ({children}) => {
         } else {
             setItems([...items, itemsToAdd])
         }  
+
+        let count = count + 1;
     }
 
     const isInCart = (id) => {
