@@ -4,10 +4,13 @@ import CompanyLogo from '../CompanyLogo/CompanyLogo';
 import {NavLink, Link} from 'react-router-dom';
 import { useContext } from 'react';
 import { FavoritesContext } from '../../context/FavoritesContext';
+import { CartContext } from '../../context/CartContext';
 
 const Navbar = () => {
 
     const {favorites} = useContext(FavoritesContext)
+
+    const {items} = useContext(CartContext)
 
     return( 
         <nav className='navbar- flexCenter'>
@@ -20,7 +23,7 @@ const Navbar = () => {
             <NavLink className={({ isActive }) => isActive? 'ActiveOption' : 'Option'} to={`/staff`}>Staff</NavLink>
             <NavLink className={({ isActive }) => isActive? 'ActiveOption' : 'Option'} to={`/location`}>Location</NavLink>
 
-            <Link to='/cart' className='cartButton'>Cart:</Link>
+            <Link to='/cart' className='cartButton'>Cart: {items.length}</Link>
             <Link to='/favorites' className='favButton'>Favorites: {favorites.length}</Link>
         </nav>
     )
