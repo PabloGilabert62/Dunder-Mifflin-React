@@ -10,7 +10,7 @@ const Navbar = () => {
 
     const {favorites} = useContext(FavoritesContext)
 
-    const {items, setItems, addItems} = useContext(CartContext)
+    const {items} = useContext(CartContext)
 
     return( 
         <nav className='navbar- flexCenter'>

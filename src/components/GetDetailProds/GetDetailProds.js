@@ -18,7 +18,9 @@ const GetDetailProds = () => {
 
     /* -- TO ADD ITEMS TO FAVORITES -- */
     const {addFavorites, isInFavorites, removeFavorites} = useContext(FavoritesContext)
-    const {addItems} = useContext(CartContext)
+
+    /* -- TO ADD ITEMS TO CART -- */
+    const {items, addItems} = useContext(CartContext)
 
     useEffect(() => {
 
@@ -71,8 +73,8 @@ const GetDetailProds = () => {
                 <img src={prods.src} alt={prods.alt}/>
                 <h5 className='font-title'>{prods.title} {prods.price}</h5>
                 <p className='font-title'>Available stock: {prods.stock}</p>
-                <p className='font-title'>Items added: {count}</p>
-
+                <p className='font-title'>Items added:{count}</p>
+                
                 {/* CART BUTTON */}
                 {showButton && <div>
                     <button onClick={() => {add()}} className='buttonPlus'>+</button>
@@ -88,8 +90,7 @@ const GetDetailProds = () => {
                     className='buttonFavorite'>
                     {isAdded ? 'Remove from favorites' : 'Add to favorites'}
 
-                </button>
-                
+                </button>   
             </div>
         </div> 
     )
