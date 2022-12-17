@@ -74,7 +74,7 @@ const GetDetailProds = () => {
                 <h5 className='font-title'>{prods.title} {prods.price}</h5>
                 <p className='font-title'>Available stock: {prods.stock}</p>
                 <p className='font-title'>Items added:{count}</p>
-                
+
                 {/* CART BUTTON */}
                 {showButton && <div>
                     <button onClick={() => {add()}} className='buttonPlus'>+</button>

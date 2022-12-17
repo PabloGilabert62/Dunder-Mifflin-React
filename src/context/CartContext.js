@@ -12,14 +12,11 @@ export const CartProvider = ({children}) => {
         if(isInCart(itemsToAdd.id)) {
 
             const updatedCart = items.map((prod) => {
-
                 if(prod.id === itemsToAdd.id){
                     return {...prod, count:prod.count + itemsToAdd.count}
                 }
             })
-
             setItems(updatedCart)
-
         } else {
             setItems([...items, itemsToAdd])
         }
@@ -29,8 +26,13 @@ export const CartProvider = ({children}) => {
         return items.some(item => item.id === id)
     }
 
+    const removeItem = (id) => {
+        const updatedCart = items.filter(item => item.id !== id)
+        setItems(updatedCart)
+    }
+
     return(
-        <CartContext.Provider value={{items, setItems, addItems, isInCart}}>
+        <CartContext.Provider value={{items, setItems, addItems, isInCart, removeItem}}>
             {children}
         </CartContext.Provider>
     )

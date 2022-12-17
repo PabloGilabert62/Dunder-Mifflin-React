@@ -2,23 +2,49 @@ import './Cart.css';
 import React from 'react';
 import { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
+import { useState } from 'react';
 
 const Cart = () => {
 
-    const {items} = useContext(CartContext)
+    const [showButton, setShowButton] = useState(true)
+    let totalAdd = 0;
+
+    const total = (a, b) => {
+        totalAdd += (a * b)
+    }
+
+    const {items, removeItem} = useContext(CartContext)
     
+    console.log(items.price)
     return(
         <div>
-            <h1>Items in cart</h1>
+            <span className='title'>Items in cart</span>
             {items.map(item => {
                 return(
-                    <div>
-                        <h5>Product: {item.title}</h5>
-                        <h5>Quantity: {item.count}</h5>
-                    </div>
+                    <div className='flex-center'>
+                        <div className='item-container'>
+                            <h5>Product: {item.title}</h5>
+                            <h5>Price: ${item.price}</h5>
+                            <h5>Quantity: {item.count}</h5>
+                            <h5>Subtotal: ${item.price * item.count}</h5>
+
+                            {total(item.price, item.count)}
+
+                            <button onClick={() => {item.id && removeItem(item.id)}} 
+                                className='eliminate-item'>
+                                Eliminate Item
+                            </button>
+                        </div> 
+                    </div> 
                 )
             })}
-        </div>
+            
+            {totalAdd !== 0 &&
+            <div>
+                <div className='total'>Total: $ {totalAdd}</div>
+                <div><button className='eliminate-cart'>Eliminate Cart</button></div>
+            </div>}
+        </div>  
     )
 }
 
