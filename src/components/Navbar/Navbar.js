@@ -8,6 +8,8 @@ import { CartContext } from '../../context/CartContext';
 
 const Navbar = () => {
 
+    let countProds = 0;
+
     const {favorites} = useContext(FavoritesContext)
 
     const {items} = useContext(CartContext)
@@ -23,8 +25,19 @@ const Navbar = () => {
             <NavLink className={({ isActive }) => isActive? 'ActiveOption' : 'Option'} to={`/staff`}>Staff</NavLink>
             <NavLink className={({ isActive }) => isActive? 'ActiveOption' : 'Option'} to={`/location`}>Location</NavLink>
 
-            <Link to='/cart' className='cartButton'>Cart: {items.length}</Link>
-            <Link to='/favorites' className='favButton'>Favorites: {favorites.length}</Link>
+            <Link to='/cart' className='cart-icon position-relative'>
+                <img className='cart-icon' src='../images/CartIcon.png' alt='cart icon'/>
+                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    {items.length}
+                </span> 
+            </Link>
+
+            <Link to='/favorites' className='fav-icon cart-icon position-relative'>
+                <img className='cart-icon' src='../images/heart.png' alt='heart icon'/>
+                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    {favorites.length}
+                </span>
+            </Link>
         </nav>
     )
 }

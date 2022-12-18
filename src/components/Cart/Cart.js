@@ -6,7 +6,8 @@ import { useState } from 'react';
 
 const Cart = () => {
 
-    const [showButton, setShowButton] = useState(true)
+    const [showCart, setShowCart] = useState(true)
+
     let totalAdd = 0;
 
     const total = (a, b) => {
@@ -20,7 +21,7 @@ const Cart = () => {
         <div>
             <span className='title'>Items in cart</span>
             {items.map(item => {
-                return(
+                return( 
                     <div className='flex-center'>
                         <div className='item-container'>
                             <h5>Product: {item.title}</h5>
@@ -30,21 +31,23 @@ const Cart = () => {
 
                             {total(item.price, item.count)}
 
-                            <button onClick={() => {item.id && removeItem(item.id)}} 
-                                className='eliminate-item'>
+                            <button onClick={() => {item.id && removeItem(item.id)}} className='eliminate-item'> 
                                 Eliminate Item
                             </button>
-                        </div> 
-                    </div> 
+                        </div>
+                    </div>
                 )
             })}
             
-            {totalAdd !== 0 &&
+            {totalAdd !== 0 ?
             <div>
                 <div className='total'>Total: $ {totalAdd}</div>
                 <div><button className='eliminate-cart'>Eliminate Cart</button></div>
+            </div> :
+            <div className='no-items'>
+                No items added yet, go to explore our products!
             </div>}
-        </div>  
+        </div>
     )
 }
 

@@ -46,8 +46,14 @@ html{
     color: white;
 }
 
-.cartButton, .favButton{
-    background-color: rgb(6, 76, 156);
-    color: white;
-    border: none;
+.cart-icon{
+    height: 65px;
+    width: 65px;
+    border-radius: 50%;
+}
+
+.fav-icon{
+    height: 65px;
+    width: 65px;
+    margin-right: 3%;
 }
