@@ -2,11 +2,11 @@ import React from "react";
 import { CartContext } from '../../context/CartContext';
 import { FavoritesContext } from '../../context/FavoritesContext';
 import { useState, useEffect, useContext} from 'react';
+import ItemCount from "../ItemCount/ItemCount";
 
 const ItemDetail = () => {
     const {isInFavorites} = useContext(FavoritesContext)
     const {addItems} = useContext(CartContext)
-    const [showButton, setShowButton] = useState(true)
     
     return(
         <div>
@@ -28,5 +28,4 @@ const ItemDetail = () => {
         </div> 
     )
 }
-
 export default ItemDetail

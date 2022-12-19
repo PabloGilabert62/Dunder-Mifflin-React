@@ -1,6 +1,4 @@
 import React, {useState } from "react";
-import FlexWrapper from "../FlexWrapper/FlexWrapper";
-import Button from "../Button/Button";
 import { getProdsByAlt } from '../../asyncMock';
 
 export default function ItemCount({stock, initial, text, onAddToCart}) {
@@ -37,17 +35,17 @@ export default function ItemCount({stock, initial, text, onAddToCart}) {
 
     return (
         <div>
-            <FlexWrapper>
-            <div className="itemcount_control">
-                <Button color="#fc6622" onClick={handleSubstract}>-</Button>
-                <strong>{count}</strong>
-                <Button color="#00cc22" onClick={handleAdd}>+</Button>
-            </div>
+            <div>
+                <div className="itemcount_control">
+                    <button color="#fc6622" onClick={handleSubstract}>-</button>
+                    <strong>{count}</strong>
+                    <button color="#00cc22" onClick={handleAdd}>+</button>
+                </div>
 
-            <div className="itemcount_btns">
-            <button onClick={()=> {onAddToCart(count)}} >{text}</button>
+                <div className="itemcount_btns">
+                    <button onClick={()=> {onAddToCart(count)}} >{text}</button>
+                </div>
             </div>
-            </FlexWrapper>
         </div>
     );
 }
