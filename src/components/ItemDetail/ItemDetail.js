@@ -4,8 +4,9 @@ import { useState } from "react";
 import { CartContext } from '../../context/CartContext';
 import { FavoritesContext } from '../../context/FavoritesContext';
 import { useContext } from 'react';
+import ItemCount from '../ItemCount/ItemCount';
 
-const ItemDetail = ({prods, count}) => {
+export default function ItemDetail ({prods, count}) {
 
     const {addFavorites, removeFavorites, isInFavorites} = useContext(FavoritesContext)
     const {isInCart} = useContext(CartContext)
@@ -35,4 +36,3 @@ const ItemDetail = ({prods, count}) => {
         </div>
     )
 }
-export default ItemDetail

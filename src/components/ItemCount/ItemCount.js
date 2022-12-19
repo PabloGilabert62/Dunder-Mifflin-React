@@ -1,10 +1,13 @@
 import './ItemCount.css';
 import React, {useState } from "react";
 import { getProdsByAlt } from '../../asyncMock';
+import { useParams } from 'react-router-dom';
+import { useEffect } from 'react';
 
-export default function ItemCount({stock, initial, text, onAddToCart}) {
+export default function ItemCount ({stock, initial, text, onAddToCart}) {
 
     const [isLoading, setIsLoading] = useState(true)
+    const [prods, setProds] = useState({})
     const [count, setCount] = useState(initial);
     const {alt} = useParams()
 
@@ -38,19 +41,9 @@ export default function ItemCount({stock, initial, text, onAddToCart}) {
 
     return (
         <div>
-            <div>
-                <div>
-                    <button onClick={handleAdd} className='buttonPlus'>+</button>
-
-                    <button onClick={addToCart}>Add to cart</button>
-
-                    <button onClick={handleSubstract} className='buttonMinus'>-</button>
-                </div>
-
-                <div>
-                    <button onClick={()=> {onAddToCart(count)}} >{text}</button>
-                </div>
-            </div>
+            <button onClick={handleAdd} className='buttonPlus'>+</button>
+            <button onClick={addToCart}>Add to cart</button>
+            <button onClick={handleSubstract} className='buttonMinus'>-</button>
         </div>
-    );
+    )
 }
