@@ -1,5 +1,6 @@
 import './ItemDetail.css';
-import React, { useState } from "react";
+import React from 'react';
+import { useState } from "react";
 import { CartContext } from '../../context/CartContext';
 import { FavoritesContext } from '../../context/FavoritesContext';
 import { useContext } from 'react';
@@ -17,6 +18,10 @@ const ItemDetail = ({prods}) => {
         }
     }
 
+    const add = () => {}
+    const substract = () => {}
+    const addToCart = () => {}
+ 
     return(
         <div className='cards-details-flex'>
             <div className='cards-details '>
@@ -25,6 +30,14 @@ const ItemDetail = ({prods}) => {
                 <p className='font-title'>{prods.title} ${prods.price}</p>
                 <p className='font-title'>Available stock: {prods.stock}</p>
                 <p className='font-title'>Items added:{}</p>
+
+                <div>
+                    <button onClick={() => {add()}} className='buttonPlus'>+</button>
+
+                    <button onClick={() => {addToCart()}}>Add to cart</button>
+
+                    <button onClick={() => {substract()}} className='buttonMinus'>-</button>
+                </div>
 
                 <button onClick={() => {showButton ? removeFavorites(prods.id) : addFavorites(prods)}}
                     className='buttonFavorite'>
