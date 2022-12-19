@@ -2,12 +2,9 @@ import './Cart.css';
 import React from 'react';
 import { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
-import { useState } from 'react';
 
 const Cart = () => {
-
-    const [showCart, setShowCart] = useState(true)
-
+    
     let totalAdd = 0;
 
     const total = (a, b) => {
@@ -27,7 +24,7 @@ const Cart = () => {
                             <h5>Product: {item.title}</h5>
                             <h5>Price: ${item.price}</h5>
                             <h5>Quantity: {item.count}</h5>
-                            <h5>Subtotal: ${item.price * item.count}</h5>
+                            <h5>Subtotal: ${item.count * item.price}</h5>
 
                             {total(item.price, item.count)}
 

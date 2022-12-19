@@ -8,8 +8,6 @@ import { CartContext } from '../../context/CartContext';
 
 const Navbar = () => {
 
-    let countProds = 0;
-
     const {favorites} = useContext(FavoritesContext)
 
     const {items} = useContext(CartContext)

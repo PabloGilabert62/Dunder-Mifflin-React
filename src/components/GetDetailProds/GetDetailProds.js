@@ -8,19 +8,14 @@ import { CartContext } from '../../context/CartContext';
 
 /* -- GET EACH DETAIL CARD -- */
 const GetDetailProds = () => {
-    
-    const [count, setCount] = useState(0)
+    const {addFavorites, isInFavorites, removeFavorites} = useContext(FavoritesContext)
+    const {items, addItems} = useContext(CartContext)
+   
     const [prods, setProds] = useState({})
     const [isLoading, setIsLoading] = useState(true)
-    const {alt} = useParams()
-
     const [showButton, setShowButton] = useState(true)
-
-    /* -- TO ADD ITEMS TO FAVORITES -- */
-    const {addFavorites, isInFavorites, removeFavorites} = useContext(FavoritesContext)
-
-    /* -- TO ADD ITEMS TO CART -- */
-    const {items, addItems} = useContext(CartContext)
+    const {alt} = useParams()
+    const [count, setCount] = useState(0)
 
     useEffect(() => {
 
@@ -71,10 +66,10 @@ const GetDetailProds = () => {
             <div className='cards-details'>
 
                 <img src={prods.src} alt={prods.alt}/>
-                <h5 className='font-title'>{prods.title} {prods.price}</h5>
+                <h5 className='font-title'>{prods.title} ${prods.price}</h5>
                 <p className='font-title'>Available stock: {prods.stock}</p>
                 <p className='font-title'>Items added:{count}</p>
-
+             
                 {/* CART BUTTON */}
                 {showButton && <div>
                     <button onClick={() => {add()}} className='buttonPlus'>+</button>
