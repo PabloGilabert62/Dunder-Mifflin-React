@@ -26,11 +26,11 @@ export default function ItemCount({stock, initial, text, onAddToCart}) {
     }, [alt])
 
     function handleSubstract() {
-        if (count > 1) setCount(count-1);
+        if (count > 1) setCount(count - 1);
     }
 
     function handleAdd() {
-        if (count < stock ) setCount(count+1);
+        if (count < stock ) setCount(count + 1);
     }
 
     return (
