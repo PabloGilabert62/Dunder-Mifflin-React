@@ -13,6 +13,7 @@ import Cart from './components/Cart/Cart';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { FavoritesProvider } from './context/FavoritesContext';
 import { CartProvider } from './context/CartContext';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
               <Route path='/' element={<Start/>}></Route>
               <Route path='/home' element={<Home/>}/>
               <Route path='/prods' element={<GetProds/>}/>
-              <Route path='/prods/:alt' element={<ItemDetail/>}/>
+              <Route path='/prods/:alt' element={<ItemDetailContainer/>}/>
               <Route path='/contact' element={<Contact/>}/>
               <Route path='/staff' element={<Staff/>}/>
               <Route path='/location' element={<Location/>}/>
@@ -39,4 +40,4 @@ function App() {
   );
 }
 
-export default App;
+export default App;
