@@ -1,4 +1,4 @@
-import CardList from "../CardList/CardList";
+import ItemList from "../ItemList/ItemList";
 import React from "react";
 import './ProdsList.css';
 
@@ -7,7 +7,7 @@ const NotesList = ({ prods }) => {
         <div>
             { 
                 prods.map(prods => (
-                    <CardList prods={prods} key={prods.id}/>
+                    <ItemList prods={prods} key={prods.id}/>
                 )) 
             } 
         </div>

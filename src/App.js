@@ -3,7 +3,7 @@ import React from 'react';
 import Start from './components/Start/Start';
 import Home from './components/Home/Home';
 import GetProds from './components/GetProds/GetProds';
-import GetDetailProds from './components/GetDetailProds/GetDetailProds'
+import ItemDetail from './components/ItemDetail/ItemDetail'
 import Contact from './components/Contact/Contact';
 import Staff from './components/Staff/Staff';
 import Location from './components/Location/Location';
@@ -25,7 +25,7 @@ function App() {
               <Route path='/' element={<Start/>}></Route>
               <Route path='/home' element={<Home/>}/>
               <Route path='/prods' element={<GetProds/>}/>
-              <Route path='/prods/:alt' element={<GetDetailProds/>}/>
+              <Route path='/prods/:alt' element={<ItemDetail/>}/>
               <Route path='/contact' element={<Contact/>}/>
               <Route path='/staff' element={<Staff/>}/>
               <Route path='/location' element={<Location/>}/>

@@ -1,8 +1,8 @@
-import './CardList.css';
+import './ItemList.css';
 import { Link } from 'react-router-dom';
 import React from 'react';
 
-const CardList = ({ prods }) => {
+const ItemList = ({ prods }) => {
     
     return(
         /* -- ALL CARDS -- */
@@ -19,4 +19,4 @@ const CardList = ({ prods }) => {
     )
 }
 
-export default CardList
+export default ItemList

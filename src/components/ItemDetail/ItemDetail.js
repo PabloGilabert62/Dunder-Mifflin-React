@@ -1,4 +1,4 @@
-import './GetDetailProds.css';
+import './ItemDetail.css';
 import React from 'react';
 import { getProdsByAlt } from '../../asyncMock';
 import { useParams } from 'react-router-dom';
@@ -7,7 +7,7 @@ import { FavoritesContext } from '../../context/FavoritesContext';
 import { CartContext } from '../../context/CartContext';
 
 /* -- GET EACH DETAIL CARD -- */
-const GetDetailProds = () => {
+const ItemDetail = () => {
     const {addFavorites, isInFavorites, removeFavorites} = useContext(FavoritesContext)
     const {items, addItems} = useContext(CartContext)
    
@@ -91,4 +91,4 @@ const GetDetailProds = () => {
     )
 }
 
-export default GetDetailProds
+export default ItemDetail
