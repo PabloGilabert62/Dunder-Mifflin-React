@@ -1,3 +1,4 @@
+import './ItemCount.css';
 import React, {useState } from "react";
 import { getProdsByAlt } from '../../asyncMock';
 
@@ -33,16 +34,20 @@ export default function ItemCount({stock, initial, text, onAddToCart}) {
         if (count < stock ) setCount(count + 1);
     }
 
+    function addToCart(){}
+
     return (
         <div>
             <div>
-                <div className="itemcount_control">
-                    <button color="#fc6622" onClick={handleSubstract}>-</button>
-                    <strong>{count}</strong>
-                    <button color="#00cc22" onClick={handleAdd}>+</button>
+                <div>
+                    <button onClick={handleAdd} className='buttonPlus'>+</button>
+
+                    <button onClick={addToCart}>Add to cart</button>
+
+                    <button onClick={handleSubstract} className='buttonMinus'>-</button>
                 </div>
 
-                <div className="itemcount_btns">
+                <div>
                     <button onClick={()=> {onAddToCart(count)}} >{text}</button>
                 </div>
             </div>

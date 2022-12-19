@@ -23,16 +23,6 @@
     font-weight: 600;
 }
 
-.buttonPlus{
-    background-color: green;
-    width: 12%;
-}
-
-.buttonMinus{
-    background-color: red;
-    width: 12%;
-}
-
 .buttonFavorite{
     margin-top: 3%;
     background-color: rgb(4, 4, 66);
