@@ -37,20 +37,16 @@ const ItemCount = () => {
         return <p className='loading'>Loading...</p>
     }
 
-    /* ------------------------------------------------------------------------------- */
     const isAdded = isInFavorites(prods.id)
 
-    /* ------------------------------------------------------------------------------- */
     const add = () => { 
         (count < prods.stock) ? setCount(count + 1): setCount(count)
     }
 
-    /* ------------------------------------------------------------------------------- */
     const substract = () => { 
         (count > 0) ? setCount (count - 1) : setCount(count)
     }
 
-    /* ------------------------------------------------------------------------------- */
     const addToCart = () => {
         if(count !== 0){
             addItems({...prods, count})
@@ -59,19 +55,18 @@ const ItemCount = () => {
     }
 
     return(
-        {/* CART BUTTON */}
-
-        {showButton && 
+        
+        {(showButton && 
         <div>
             <button onClick={() => {add()}} className='buttonPlus'>+</button>
 
             <button onClick={() => {addToCart()}}>Add to cart</button>
 
             <button onClick={() => {substract()}} className='buttonMinus'>-</button>
-        </div>}
+        </div>)}
 
-        {/* FAVORITE BUTTON */}
-        <button onClick={() => {isAdded ? removeFavorites(prods.id) : addFavorites(prods)}} 
+        
+        <button onClick={() => {isAdded ? removeFavorites(prods.id) : addFavorites(prods)}};
 
             className='buttonFavorite'>
             {isAdded ? 'Remove from favorites' : 'Add to favorites'}
