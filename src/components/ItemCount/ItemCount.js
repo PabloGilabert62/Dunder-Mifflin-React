@@ -1,19 +1,13 @@
-import React from "react";
-import { useState } from "react";
+import React, {useState } from "react";
+import FlexWrapper from "../FlexWrapper/FlexWrapper";
+import Button from "../Button/Button";
 import { getProdsByAlt } from '../../asyncMock';
-import { useParams } from 'react-router-dom';
-import { CartContext } from '../../context/CartContext';
-import { FavoritesContext } from '../../context/FavoritesContext';
-import { useState, useEffect, useContext} from 'react';
 
-const ItemCount = () => {
-    const {isInFavorites} = useContext(FavoritesContext)
-    const {addItems} = useContext(CartContext)
+export default function ItemCount({stock, initial, text, onAddToCart}) {
 
     const [isLoading, setIsLoading] = useState(true)
-    const [showButton, setShowButton] = useState(true)
+    const [count, setCount] = useState(initial);
     const {alt} = useParams()
-    const [count, setCount] = useState(0)
 
     useEffect(() => {
 
@@ -33,46 +27,27 @@ const ItemCount = () => {
 
     }, [alt])
 
-    if(isLoading) {
-        return <p className='loading'>Loading...</p>
+    function handleSubstract() {
+        if (count > 1) setCount(count-1);
     }
 
-    const isAdded = isInFavorites(prods.id)
-
-    const add = () => { 
-        (count < prods.stock) ? setCount(count + 1): setCount(count)
+    function handleAdd() {
+        if (count < stock ) setCount(count+1);
     }
 
-    const substract = () => { 
-        (count > 0) ? setCount (count - 1) : setCount(count)
-    }
-
-    const addToCart = () => {
-        if(count !== 0){
-            addItems({...prods, count})
-            setShowButton(false)
-        }
-    }
-
-    return(
-        
-        {(showButton && 
+    return (
         <div>
-            <button onClick={() => {add()}} className='buttonPlus'>+</button>
+            <FlexWrapper>
+            <div className="itemcount_control">
+                <Button color="#fc6622" onClick={handleSubstract}>-</Button>
+                <strong>{count}</strong>
+                <Button color="#00cc22" onClick={handleAdd}>+</Button>
+            </div>
 
-            <button onClick={() => {addToCart()}}>Add to cart</button>
-
-            <button onClick={() => {substract()}} className='buttonMinus'>-</button>
-        </div>)}
-
-        
-        <button onClick={() => {isAdded ? removeFavorites(prods.id) : addFavorites(prods)}};
-
-            className='buttonFavorite'>
-            {isAdded ? 'Remove from favorites' : 'Add to favorites'}
-
-        </button>   
-    )
+            <div className="itemcount_btns">
+            <button onClick={()=> {onAddToCart(count)}} >{text}</button>
+            </div>
+            </FlexWrapper>
+        </div>
+    );
 }
-
-export default ItemCount

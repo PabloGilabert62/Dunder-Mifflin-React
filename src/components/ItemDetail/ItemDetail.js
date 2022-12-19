@@ -1,20 +1,30 @@
-import './ItemDetail.css';
-import React from 'react';
-import { useState } from 'react';
+import React from "react";
+import { CartContext } from '../../context/CartContext';
+import { FavoritesContext } from '../../context/FavoritesContext';
+import { useState, useEffect, useContext} from 'react';
 
-/* -- GET EACH DETAIL CARD -- */
 const ItemDetail = () => {
-    const [prods, setProds] = useState({})
+    const {isInFavorites} = useContext(FavoritesContext)
+    const {addItems} = useContext(CartContext)
+    const [showButton, setShowButton] = useState(true)
     
-    /* -- GET EACH DETAIL CARD -- */
-    return (
-        <div className='cards-details-flex'>
-            <div className='cards-details'>
-                <img src={prods.src} alt={prods.alt}/>
-                <h5 className='font-title'>{prods.title} ${prods.price}</h5>
-                <p className='font-title'>Available stock: {prods.stock}</p>
-                <p className='font-title'>Items added:</p>
+    return(
+        <div>
+            <div>
+                <button onClick={() => {add()}} className='buttonPlus'>+</button>
+
+                <button onClick={() => {addToCart()}}>Add to cart</button>
+
+                <button onClick={() => {substract()}} className='buttonMinus'>-</button>
             </div>
+
+            
+            <button onClick={() => {isAdded ? removeFavorites(prods.id) : addFavorites(prods)}}
+
+                className='buttonFavorite'>
+                {isAdded ? 'Remove from favorites' : 'Add to favorites'}
+
+            </button>  
         </div> 
     )
 }
