@@ -7,3 +7,10 @@
     background-color: red;
     width: 12%;
 }
+
+.buttonFavorite{
+    margin-top: 3%;
+    background-color: rgb(4, 4, 66);
+    color: white;
+    border: 0px;
+}
