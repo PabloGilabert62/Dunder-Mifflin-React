@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 import { useContext } from 'react';
 import { FavoritesContext } from '../../context/FavoritesContext';
 
-export default function ItemCount ({stock, initial, text, onAddToCart}) {
+export default function ItemCount ({stock, initial}) {
 
     const {addFavorites, removeFavorites, isInFavorites} = useContext(FavoritesContext)
 
