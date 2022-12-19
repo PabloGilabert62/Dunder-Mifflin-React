@@ -25,10 +25,11 @@ const ItemDetail = ({prods}) => {
                 <p className='font-title'>Available stock: {prods.stock}</p>
                 <p className='font-title'>Items added:{}</p>
 
+                {isAdded &&
                 <button onClick={() => {showButton ? removeFavorites(prods.id) : addFavorites(prods)}}
                     className='buttonFavorite'>
                     {showButton ? 'Remove from favorites' : 'Add to favorites'}
-                </button>
+                </button>}
             </div> 
         </div>
     )
