@@ -3,8 +3,7 @@
     border: 5px solid rgb(6, 76, 156);
     border-radius: 8px;
     width: fit-content;
-    margin-top: 2%;
-    margin-bottom: 5%;
+    margin-bottom: 4%;
 }
 
 .cards-details img{
@@ -15,13 +14,12 @@
 .cards-details-flex{
     display: flex;
     justify-content: center;
-    
 }
 
 .font-title{
-    margin-top: 3%;
+    margin-top: 2%;
     margin-bottom: 2%;
-    font-size: 120%;
+    font-size: 100%;
     font-weight: 600;
 }
 

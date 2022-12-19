@@ -12,7 +12,7 @@ const ItemDetail = ({prods}) => {
     const [showButton, setShowButton] = useState(false)
     
     const isAdded = () => {
-        if (isInFavorites(prods.id)) {
+        if (!isInFavorites(prods.id)) {
             setShowButton(true)
         }
     }
@@ -20,16 +20,16 @@ const ItemDetail = ({prods}) => {
     return(
         <div className='cards-details-flex'>
             <div className='cards-details '>
+                
                 <img src={prods.src} alt={prods.alt}/>
                 <p className='font-title'>{prods.title} ${prods.price}</p>
                 <p className='font-title'>Available stock: {prods.stock}</p>
                 <p className='font-title'>Items added:{}</p>
 
-                {isAdded &&
                 <button onClick={() => {showButton ? removeFavorites(prods.id) : addFavorites(prods)}}
                     className='buttonFavorite'>
                     {showButton ? 'Remove from favorites' : 'Add to favorites'}
-                </button>}
+                </button>
             </div> 
         </div>
     )
