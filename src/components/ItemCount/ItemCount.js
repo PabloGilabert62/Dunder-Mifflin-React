@@ -14,7 +14,7 @@ const ItemCount = ({stock, initial, onAddToCart}) => {
     const [isLoading, setIsLoading] = useState(true)
     const [showButton, setShowButton] = useState(false)
     const [prods, setProds] = useState({})
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(initial);
     const {alt} = useParams()
 
     useEffect(() => {
