@@ -18,13 +18,6 @@
     justify-content: center;
 }
 
-.font-title{
-    margin-top: 2%;
-    margin-bottom: 2%;
-    font-size: 80%;
-    font-weight: 600;
-}
-
 .line{
     background-color: black;
     height: 2px;

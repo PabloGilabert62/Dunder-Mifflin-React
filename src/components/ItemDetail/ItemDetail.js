@@ -21,8 +21,6 @@ export default function ItemDetail ({prods, initial}) {
                 <div className='line'></div>
                 <p className='font-title'>Available stock: {prods.stock}</p>
                 <div className='line'></div>
-                <p className='font-title'>Items added:{initial}</p>
-                <div className='line'></div>
                 <ItemCount onAddToCart={handleAddToCart}/>
             </div>
         </div>
