@@ -13,7 +13,6 @@ const Cart = () => {
 
     const {items, removeItem} = useContext(CartContext)
     
-    console.log(items.price)
     return(
         <div>
             <span className='title'>Items in cart</span>

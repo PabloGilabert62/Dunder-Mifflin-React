@@ -40,7 +40,7 @@ export default function ItemCount ({stock, initial, onAddToCart}) {
     }
 
     function handleAdd() {
-        if (count < prods.stock ) setCount(count + 1);
+        if (count < prods.stock ) setCount(count = count + 1);
     }
 
     return (
