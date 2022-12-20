@@ -19,7 +19,7 @@ export default function ItemDetail ({prods}) {
                 <img src={prods.src} alt={prods.alt}/>
                 <p className='font-title'>{prods.title} ${prods.price}</p>
                 <p className='font-title'>Available stock: {prods.stock}</p>
-                <p className='font-title'>Items added:{prods}</p>
+                <p className='font-title'>Items added:{prods.stock}</p>
                 <ItemCount onAddToCart={handleAddToCart}/>
             </div>
         </div>
