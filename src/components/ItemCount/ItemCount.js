@@ -17,21 +17,16 @@ export default function ItemCount ({stock, initial}) {
     const {alt} = useParams()
 
     useEffect(() => {
-
         getProdsByAlt(alt)
-
             .then(response => {
                 setProds(response)
             })
-
             .catch(error => {
                 console.error(error)
             })
-
             .finally(() => {
                 setIsLoading(false)
             })
-
     }, [alt])
 
     const isAdded = () => {
@@ -45,7 +40,7 @@ export default function ItemCount ({stock, initial}) {
     }
 
     function handleAdd() {
-        if (count < stock ) setCount(count + 1);
+        if (count < prods.stock ) setCount(count + 1);
     }
 
     function addToCart(){}
@@ -53,12 +48,12 @@ export default function ItemCount ({stock, initial}) {
     return (
         <div>
             <button onClick={handleAdd} className='buttonPlus'>+</button>
-            <button onClick={addToCart}>Add to cart</button>
+            <button onClick={addToCart} className='buttonAdd'>Add to cart</button>
             <button onClick={handleSubstract} className='buttonMinus'>-</button>
 
             <button onClick={() => {showButton ? removeFavorites(prods.id) : addFavorites(prods)}}
-                    className='buttonFavorite'>
-                    {showButton ? 'Remove from favorites' : 'Add to favorites'}
+                className='buttonFavorite'>
+                {showButton ? 'Remove from favorites' : 'Add to favorites'}
             </button>
         </div>
     )

@@ -2,7 +2,7 @@
     background-color: rgb(6, 76, 156);
     border: 5px solid rgb(6, 76, 156);
     border-radius: 8px;
-    width: fit-content;
+    width: 230px;
     margin-bottom: 4%;
 }
 
@@ -19,6 +19,6 @@
 .font-title{
     margin-top: 2%;
     margin-bottom: 2%;
-    font-size: 100%;
-    font-weight: 600;
+    font-size: 80%;
+    font-weight: 500;
 }

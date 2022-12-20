@@ -1,11 +1,15 @@
 .buttonPlus{
     background-color: green;
-    width: 12%;
+    width: 14%;
+    font-size: 70%;
+    font-weight: 500;
 }
 
 .buttonMinus{
     background-color: red;
-    width: 12%;
+    width: 14%;
+    font-size: 70%;
+    font-weight: 500;
 }
 
 .buttonFavorite{
@@ -13,4 +17,11 @@
     background-color: rgb(4, 4, 66);
     color: white;
     border: 0px;
+    font-size: 70%;
+    font-weight: 500;
+}
+
+.buttonAdd{
+    font-size: 70%;
+    font-weight: 500;
 }
