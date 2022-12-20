@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 import { useContext } from 'react';
 import { FavoritesContext } from '../../context/FavoritesContext';
 
-export default function ItemCount ({stock, initial}) {
+export default function ItemCount ({stock, initial, onAddToCart}) {
 
     const {addFavorites, removeFavorites, isInFavorites} = useContext(FavoritesContext)
 
@@ -43,12 +43,16 @@ export default function ItemCount ({stock, initial}) {
         if (count < prods.stock ) setCount(count + 1);
     }
 
-    function addToCart(){}
+    // function addToCart(){}
 
     return (
         <div>
             <button onClick={handleAdd} className='buttonPlus'>+</button>
-            <button onClick={addToCart} className='buttonAdd'>Add to cart</button>
+
+            {/* <button onClick={addToCart} className='buttonAdd'>Add to cart</button> */}
+
+            <button onClick={()=> {onAddToCart(count)}} className='buttonAdd'>Add to cart</button>
+
             <button onClick={handleSubstract} className='buttonMinus'>-</button>
 
             <button onClick={() => {showButton ? removeFavorites(prods.id) : addFavorites(prods)}}

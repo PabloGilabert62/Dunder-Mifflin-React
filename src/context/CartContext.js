@@ -7,11 +7,12 @@ export const CartProvider = ({children}) => {
 
     const [items, setItems] = useState([])
 
-    const addItems = (itemsToAdd) => {
+    const addItems = (itemsToAdd, count) => {
 
         if(isInCart(itemsToAdd.id)) {
 
             const updatedCart = items.map((prod) => {
+
                 if(prod.id === itemsToAdd.id){
                     return {...prod, count:prod.count + itemsToAdd.count}
                 }

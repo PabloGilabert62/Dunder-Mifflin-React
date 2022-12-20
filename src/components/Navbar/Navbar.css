@@ -7,11 +7,12 @@ html{
     background-color: rgb(6, 76, 156);
     height: 120px;
     width: 100%;
+    margin: 0px;
 }
 
 .flexCenter{
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
 }
