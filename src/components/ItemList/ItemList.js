@@ -9,8 +9,9 @@ const ItemList = ({ prods }) => {
             <div className='cards-grids'>
                 <div className='cards'>
                     <img src={prods.src} alt={prods.alt}/>
-                    <p>{prods.title}</p>
-                    <div className='btn-details'>
+                    <p className='prod-title'>{prods.title}</p>
+                    <div className='line'></div>
+                    <div>
                         <Link className='btn-details' to={`/prods/${prods.alt}`}>See more</Link>
                     </div>
                 </div>

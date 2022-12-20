@@ -2,13 +2,15 @@
     background-color: rgb(6, 76, 156);
     border: 5px solid rgb(6, 76, 156);
     border-radius: 8px;
-    width: 230px;
+    width: 190px;
     margin-bottom: 4%;
 }
 
 .cards-details img{
-    width: 220px;
-    height: 220px;
+    width: 180px;
+    height: 180px;
+    border: 2px;
+    border-radius: 8px;
 }
 
 .cards-details-flex{
@@ -21,4 +23,12 @@
     margin-bottom: 2%;
     font-size: 80%;
     font-weight: 600;
+}
+
+.line{
+    background-color: black;
+    height: 2px;
+    width: auto;
+    border: 2px;
+    border-radius: 15px;
 }

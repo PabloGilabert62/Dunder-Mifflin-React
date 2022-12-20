@@ -1,0 +1,37 @@
+.cards-details-flex-fav{
+    display: flex;
+    justify-content: space-around;
+}
+
+.cards-details-fav{
+    background-color: rgb(6, 76, 156);
+    border: 5px solid rgb(6, 76, 156);
+    border-radius: 8px;
+    width: 160px;
+    margin-bottom: 4%;
+}
+
+.cards-details-fav img{
+    width: 150px;
+    height: 150px;
+}
+
+.font-title-fav{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    font-size: 110%;
+    font-weight: 600;
+}
+
+.line-fav{
+    background-color: black;
+    height: 2px;
+    width: auto;
+    border: 2px;
+    border-radius: 15px;
+}
+
+.title-fav{
+    font-size: 190%;
+    margin-bottom: 5%;
+}

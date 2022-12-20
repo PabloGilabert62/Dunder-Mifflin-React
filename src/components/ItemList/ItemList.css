@@ -2,6 +2,7 @@
     border: 5px solid rgb(6, 76, 156);
     border-radius: 8px;
     margin-top: 50%;
+    background-color: rgb(6, 76, 156);
 }
 .cards img{
     width: 150px;
@@ -27,4 +28,17 @@
 
 .btn-details:hover{
     color: white;
+    font-size: 115%;
+}
+
+.line{
+    background-color: black;
+    height: 3px;
+    width: auto;
+    border: 2px;
+    border-radius: 15px;
+}
+
+.prod-title{
+    margin-bottom: 3%;
 }
