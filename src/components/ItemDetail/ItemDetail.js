@@ -4,11 +4,11 @@ import ItemCount from '../ItemCount/ItemCount';
 import { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
 
-export default function ItemDetail ({prods, initial}) {
+const ItemDetail = ({prods, initial}) => {
 
     const {addItems} = useContext(CartContext)
 
-    function handleAddToCart(prods){
+    const handleAddToCart = (prods) => {
         addItems(prods)
     }
     
@@ -26,3 +26,5 @@ export default function ItemDetail ({prods, initial}) {
         </div>
     )
 }
+
+export default ItemDetail

@@ -1,19 +1,20 @@
 import './ItemCount.css';
-import React, {useState } from "react";
+import React from 'react';
+import { useState } from 'react';
 import { getProdsByAlt } from '../../asyncMock';
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useContext } from 'react';
 import { FavoritesContext } from '../../context/FavoritesContext';
 
-export default function ItemCount ({stock, initial, onAddToCart}) {
+const ItemCount = ({stock, initial, onAddToCart}) => {
 
     const {addFavorites, removeFavorites, isInFavorites} = useContext(FavoritesContext)
 
     const [isLoading, setIsLoading] = useState(true)
     const [showButton, setShowButton] = useState(false)
     const [prods, setProds] = useState({})
-    const [count, setCount] = useState(initial);
+    const [count, setCount] = useState(0);
     const {alt} = useParams()
 
     useEffect(() => {
@@ -61,3 +62,5 @@ export default function ItemCount ({stock, initial, onAddToCart}) {
         </div>
     )
 }
+
+export default ItemCount
