@@ -11,17 +11,24 @@ export const CartProvider = ({children}) => {
 
         const newObj = {...itemsToAdd, count}
 
-        if(isInCart(newObj.id)){
-            items.map(item => {
-                if(item.id === newObj.id){
-                    item.count += newObj.count
-                }
-                return item
-            })
+        if(!isInCart(newObj.id)){
+            setItems([...items, newObj])
         } else {
-            setItems([... items, newObj])
-        }
-    }
+            
+          const newProducts =  items.map(item => {
+                if(item.id === newObj.id){
+                    const newProduct = {
+                        ...item,
+                        count: item.count + count
+                    }
+                    return newProduct
+                } else{
+                    return item
+                }
+            })
+            setItems(newProducts)
+        }
+    }
 
     const getCount = () => {
         let cant = 0;

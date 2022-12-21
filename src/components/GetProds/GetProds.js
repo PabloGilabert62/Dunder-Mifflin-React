@@ -5,8 +5,6 @@ import { useParams } from 'react-router-dom';
 import './GetProds.css'
 import React from 'react';
 
-
-/* -- GET PRODS FROM MOCK --*/
 const GetProds = () => {
   
     const [prods, setProds] = useState([])
