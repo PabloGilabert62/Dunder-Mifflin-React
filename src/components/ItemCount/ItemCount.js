@@ -24,11 +24,6 @@ const ItemCount = ({stock, initial, onAddToCart}) => {
             <button onClick={handleAdd} className='buttonPlus'>+</button>
             <button onClick={()=> onAddToCart(count)} className='buttonAdd'>Add to cart</button>
             <button onClick={handleSubstract} className='buttonMinus'>-</button>
-
-            <button onClick={() => {showButton ? removeFavorites(prods.id) : addFavorites(prods)}}
-                className='buttonFavorite'>
-                {showButton ? 'Remove from favorites' : 'Add to favorites'}
-            </button>
         </div>
     )
 
