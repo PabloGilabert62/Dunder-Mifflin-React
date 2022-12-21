@@ -23,6 +23,14 @@ export const CartProvider = ({children}) => {
         }
     }
 
+    const getCount = () => {
+        let cant = 0;
+        items.forEach(item => {
+            cant += item.count
+        })
+        return cant
+    }
+
     const isInCart = (id) => {
         return items.some(item => item.id === id)
     }
@@ -33,7 +41,7 @@ export const CartProvider = ({children}) => {
     }
 
     return(
-        <CartContext.Provider value={{items, setItems, addItems, isInCart, removeItem}}>
+        <CartContext.Provider value={{items, setItems, addItems, isInCart, removeItem, getCount}}>
             {children}
         </CartContext.Provider>
     )

@@ -1,10 +1,8 @@
 import './ItemCount.css';
 import React from 'react';
-import { useState } from 'react';
 import { getProdsByAlt } from '../../asyncMock';
 import { useParams } from 'react-router-dom';
-import { useEffect } from 'react';
-import { useContext } from 'react';
+import { useEffect, useContext, useState } from 'react';
 import { FavoritesContext } from '../../context/FavoritesContext';
 
 const ItemCount = ({stock, initial, onAddToCart}) => {
