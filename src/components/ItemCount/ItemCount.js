@@ -9,32 +9,32 @@ import { FavoritesContext } from '../../context/FavoritesContext';
 
 const ItemCount = ({stock, initial, onAddToCart}) => {
 
-    const {addFavorites, removeFavorites, isInFavorites} = useContext(FavoritesContext)
+    // const {addFavorites, removeFavorites, isInFavorites} = useContext(FavoritesContext)
 
-    const [isLoading, setIsLoading] = useState(true)
-    const [showButton, setShowButton] = useState(false)
-    const [prods, setProds] = useState({})
+    // const [isLoading, setIsLoading] = useState(true)
+    // const [showButton, setShowButton] = useState(false)
+    // const [prods, setProds] = useState({})
+    // const {alt} = useParams()
     const [count, setCount] = useState(initial);
-    const {alt} = useParams()
 
-    useEffect(() => {
-        getProdsByAlt(alt)
-            .then(response => {
-                setProds(response)
-            })
-            .catch(error => {
-                console.error(error)
-            })
-            .finally(() => {
-                setIsLoading(false)
-            })
-    }, [alt])
+    // useEffect(() => {
+    //     getProdsByAlt(alt)
+    //         .then(response => {
+    //             setProds(response)
+    //         })
+    //         .catch(error => {
+    //             console.error(error)
+    //         })
+    //         .finally(() => {
+    //             setIsLoading(false)
+    //         })
+    // }, [alt])
 
-    const isAdded = () => {
-        if (!isInFavorites(prods.id)) {
-            setShowButton(true)
-        }
-    }
+    // const isAddedFavorites = () => {
+    //     if (!isInFavorites(prods.id)) {
+    //         setShowButton(true)
+    //     }
+    // }
 
     const handleSubstract = () => {
         if (count > 1) {
@@ -43,24 +43,39 @@ const ItemCount = ({stock, initial, onAddToCart}) => {
     }
 
     const handleAdd = () => {
-        if (count < prods.stock) {
-            setCount(count = count + 1);
+        if (count < stock) {
+            setCount(count + 1);
         } 
     }
+
+    // return (
+    //     <div>
+    //         <p className='font-title'>Items added: {count}</p>
+    //         <button onClick={handleAdd} className='buttonPlus'>+</button>
+    //         <button onClick={()=> {onAddToCart(count)}} className='buttonAdd'>Add to cart</button>
+    //         <button onClick={handleSubstract} className='buttonMinus'>-</button>
+
+    //         <button onClick={() => {showButton ? removeFavorites(prods.id) : addFavorites(prods)}}
+    //             className='buttonFavorite'>
+    //             {showButton ? 'Remove from favorites' : 'Add to favorites'}
+    //         </button>
+    //     </div>
+    // )
 
     return (
         <div>
             <p className='font-title'>Items added: {count}</p>
             <button onClick={handleAdd} className='buttonPlus'>+</button>
-            <button onClick={()=> {onAddToCart(count)}} className='buttonAdd'>Add to cart</button>
+            <button onClick={()=> onAddToCart(count)} className='buttonAdd'>Add to cart</button>
             <button onClick={handleSubstract} className='buttonMinus'>-</button>
 
-            <button onClick={() => {showButton ? removeFavorites(prods.id) : addFavorites(prods)}}
+            {/* <button onClick={() => {showButton ? removeFavorites(prods.id) : addFavorites(prods)}}
                 className='buttonFavorite'>
                 {showButton ? 'Remove from favorites' : 'Add to favorites'}
-            </button>
+            </button> */}
         </div>
     )
+
 }
 
 export default ItemCount

@@ -8,8 +8,9 @@ const ItemDetail = ({prods, initial}) => {
 
     const {addItems} = useContext(CartContext)
 
-    const handleAddToCart = (prods) => {
-        addItems(prods)
+    const handleAddToCart = (quantity) => {
+        addItems(prods,quantity)
+        console.log(quantity)
     }
     
 
@@ -21,7 +22,7 @@ const ItemDetail = ({prods, initial}) => {
                 <div className='line'></div>
                 <p className='font-title'>Available stock: {prods.stock}</p>
                 <div className='line'></div>
-                <ItemCount initial={0} onAddToCart={handleAddToCart}/>
+                <ItemCount initial={1} stock={prods.stock} onAddToCart={handleAddToCart}/>
             </div>
         </div>
     )

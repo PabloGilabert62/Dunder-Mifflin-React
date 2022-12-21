@@ -22,7 +22,8 @@ const Cart = () => {
                         <div className='item-container'>
                             <h5>Product: {item.title}</h5>
                             <h5>Price: ${item.price}</h5>
-                            <h5>Quantity: {item.count}</h5>
+                            <h5>Stock: {item.stock}</h5>
+                            <h5>Items in cart: {item.count}</h5>
                             <h5>Subtotal: ${item.count * item.price}</h5>
 
                             {total(item.price, item.count)}

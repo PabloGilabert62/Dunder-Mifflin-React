@@ -9,17 +9,17 @@ export const CartProvider = ({children}) => {
 
     const addItems = (itemsToAdd, count) => {
 
-        if(isInCart(itemsToAdd.id)) {
+        const newObj = {...itemsToAdd, count}
 
-            const updatedCart = items.map((prod) => {
-
-                if(prod.id === itemsToAdd.id){
-                    return {...prod, count:prod.count + itemsToAdd.count}
+        if(isInCart(newObj.id)){
+            items.map(item => {
+                if(item.id === newObj.id){
+                    item.count += newObj.count
                 }
+                return item
             })
-            setItems(updatedCart)
         } else {
-            setItems([...items, itemsToAdd])
+            setItems([... items, newObj])
         }
     }
 
