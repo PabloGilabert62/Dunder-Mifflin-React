@@ -1,48 +1,44 @@
 import { useState, useEffect } from 'react';
 import ProdsList from '../ProdsList/ProdsList';
-import { getProds, getProdsByTitle } from '../../asyncMock';
 import { useParams } from 'react-router-dom';
 import './GetProds.css'
 import React from 'react';
+import { getDocs, collection, query, where } from 'firebase/firestore';
+import { db } from '../../services/firebase/firebaseConfig';
 
 const GetProds = () => {
   
-    const [prods, setProds] = useState([])
-    const { titleId } = useParams()
+  const [prods, setProds] = useState([])
 
-    useEffect(() => {
+  const { categoryId } = useParams()
 
-      if(!titleId) {
+  useEffect(() => {
 
-        getProds()
-
-        .then(response => {
-          setProds(response)
+    const collectionRef = categoryId ? 
+    query(collection(db, "prods"), where("category", "==", categoryId ))
+    : collection(db, "prods")
+    
+    getDocs(collectionRef)
+      .then(response => {
+        const prodsAdapted = response.docs.map(doc => {
+          const data = doc.data()
+          return { id: doc.id, ...data}
         })
-
-        .catch(error => {
-          console.log(error)
-        })  
-
-      } else {
         
-        getProdsByTitle(titleId)
+        setProds(prodsAdapted)
+      })
 
-        .then(response => {
-          setProds(response)
-        })
+      .catch(error => {
+        console.log(error)
+      })
+      
+  }, [categoryId])
 
-        .catch(error => {
-          console.log(error)
-        })  
-      }
-    }, [titleId])
-
-    return(
-        <div>
-           <ProdsList prods={prods}/>
-        </div>
-    )
+  return(
+      <div>
+          <ProdsList prods={prods}/>
+      </div>
+  )
 }
 
 export default GetProds

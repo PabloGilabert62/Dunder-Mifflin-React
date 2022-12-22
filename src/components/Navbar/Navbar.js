@@ -13,7 +13,7 @@ const Navbar = () => {
     return( 
         <nav className='navbar- flexCenter'>
 
-            <CompanyLogo/>
+            <img className='CompanyLogo' src='/images/DunderMifflinLogo.png' alt='Dunder Mifflin Logo'/>
 
             <NavLink className={({ isActive }) => isActive? 'ActiveOption' : 'Option'} to={`/home`}>Home</NavLink>
             <NavLink className={({ isActive }) => isActive? 'ActiveOption' : 'Option'} to={`/prods`}>Prods</NavLink>
