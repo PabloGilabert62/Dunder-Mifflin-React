@@ -1,0 +1,17 @@
+.flex-item-detail{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.each-card{
+    margin-top: 5%;
+    background-color: rgb(6, 76, 156);
+    border: 2px solid rgb(6, 76, 156);
+    border-radius: 8px;
+}
+
+.font-title-item-detail{
+    font-size: 130%;
+    font-weight: 650;
+}

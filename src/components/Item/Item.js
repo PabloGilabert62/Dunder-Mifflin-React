@@ -8,8 +8,8 @@ const Item = ({ prods }) => {
         <div className='cards-grids'>
             <div className='cards'>
                 <img src={prods.src} alt={prods.alt}/>
-                <p className='prod-title'>{prods.title}</p>
-                <div className='line'></div>
+                <p className='prod-titl-item'>{prods.title}</p>
+                <div className='line-item'></div>
                 <Link className='btn-details' to={`/prods/${prods.id}`}>See more</Link>
             </div>
         </div>

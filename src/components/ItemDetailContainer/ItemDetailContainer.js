@@ -1,18 +1,14 @@
+import "./ItemDetailContainer.css";
 import React, { useEffect, useState } from 'react';
-import ItemCount from '../ItemCount/ItemCount';
-import { useContext } from 'react';
-import { CartContext } from '../../context/CartContext';
 import { getDoc, doc } from 'firebase/firestore';
 import { useParams } from 'react-router-dom';
 import { db } from '../../services/firebase/firebaseConfig';
+import ItemDetail from "../ItemDetail/ItemDetail";
+import NavbarCategory from "../NavbarCategory/NavbarCategory";
 
 const ItemDetailContainer = ({initial}) => {
-
-    const {addItems} = useContext(CartContext)
-
     const [prods, setProds] = useState([])
     const [isLoading, setIsLoading] = useState(true)
-    
     const {prodsId} = useParams()
     useEffect(() => {
 
@@ -33,29 +29,15 @@ const ItemDetailContainer = ({initial}) => {
             })
     }, [prodsId])
 
-    const handleAddToCart = (quantity) => {
-        addItems(prods,quantity)
-    }
-
     if(isLoading){
         return <p className='font-title'>Loading...</p>
     }
     
-    //EACH DETAIL CARD
     return(
-        <div className='cards-details-flex'>
-            <div className='cards-details '>
-                <img alt={prods.alt}/>
-                <p className='font-title'>{prods.title} ${prods.price}</p>
-                <div className='line'></div>
-                <p className='font-title'>{prods.category}</p>
-                <div className='line'></div>
-                <p className='font-title'>Available stock: {prods.stock}</p>
-                <div className='line'></div>
-                <ItemCount initial={1} stock={prods.stock} onAddToCart={handleAddToCart}/>
-            </div>
+        <div>
+            <NavbarCategory/>
+            <ItemDetail prods={prods}/>
         </div>
     )
 }
-
 export default ItemDetailContainer

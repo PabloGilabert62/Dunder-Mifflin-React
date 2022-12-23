@@ -20,7 +20,7 @@ const ItemCount = ({stock, initial, onAddToCart}) => {
 
     return (
         <div>
-            <p className='font-title'>Items added: {count}</p>
+            <p className='font-title-count'>Items added: {count}</p>
             <button onClick={handleAdd} className='buttonPlus'>+</button>
             <button onClick={()=> onAddToCart(count)} className='buttonAdd'>Add to cart</button>
             <button onClick={handleSubstract} className='buttonMinus'>-</button>

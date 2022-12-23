@@ -1,15 +1,15 @@
 .buttonPlus{
     background-color: green;
     width: 14%;
-    font-size: 70%;
-    font-weight: 500;
+    font-size: 100%;
+    font-weight: 600;
 }
 
 .buttonMinus{
     background-color: red;
     width: 14%;
-    font-size: 70%;
-    font-weight: 500;
+    font-size: 100%;
+    font-weight: 600;
 }
 
 .buttonFavorite{
@@ -17,18 +17,16 @@
     background-color: rgb(4, 4, 66);
     color: white;
     border: 0px;
-    font-size: 70%;
-    font-weight: 500;
+    font-size: 100%;
+    font-weight: 600;
 }
 
 .buttonAdd{
-    font-size: 70%;
-    font-weight: 500;
+    font-size: 100%;
+    font-weight: 600;
 }
 
-.font-title{
-    margin-top: 2%;
-    margin-bottom: 2%;
-    font-size: 80%;
-    font-weight: 600;
+.font-title-count{
+    font-size: 130%;
+    font-weight: 650;
 }
