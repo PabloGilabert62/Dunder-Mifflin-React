@@ -1,12 +1,11 @@
 import './Navbar.css';
 import React from 'react';
-import CompanyLogo from '../CompanyLogo/CompanyLogo';
 import { NavLink, Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { FavoritesContext } from '../../context/FavoritesContext';
 import CardWidget from '../CardWidget/CardWidget';
 
-const Navbar = () => {
+const Navbar = ({prods}) => {
 
     const {favorites} = useContext(FavoritesContext)
 
@@ -15,11 +14,12 @@ const Navbar = () => {
 
             <img className='CompanyLogo' src='/images/DunderMifflinLogo.png' alt='Dunder Mifflin Logo'/>
 
-            <NavLink className={({ isActive }) => isActive? 'ActiveOption' : 'Option'} to={`/home`}>Home</NavLink>
-            <NavLink className={({ isActive }) => isActive? 'ActiveOption' : 'Option'} to={`/prods`}>Prods</NavLink>
-            <NavLink className={({ isActive }) => isActive? 'ActiveOption' : 'Option'} to={`/contact`}>Contact</NavLink>
-            <NavLink className={({ isActive }) => isActive? 'ActiveOption' : 'Option'} to={`/staff`}>Staff</NavLink>
-            <NavLink className={({ isActive }) => isActive? 'ActiveOption' : 'Option'} to={`/location`}>Location</NavLink>
+            <Link to='/'></Link>
+            <Link to="/category/All products">All Products</Link>
+            <Link to="/category/Gastronomy">Gastronomy</Link>
+            <Link to="/category/Office">Office</Link>
+            <Link to="/category/Paper">Paper</Link>
+            {/* <NavLink to='/category/categoria4' className={({ isActive }) => isActive ? 'ActiveOption' : 'Option' }>Paper</NavLink> */}
 
             <Link to='/cart' className='cart-icon position-relative'>
                 <CardWidget/>

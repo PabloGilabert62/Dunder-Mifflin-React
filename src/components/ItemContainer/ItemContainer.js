@@ -1,12 +1,12 @@
+import './ItemContainer.css';
 import { useState, useEffect } from 'react';
-import ProdsList from '../ProdsList/ProdsList';
+import ItemList from '../ItemList/ItemList';
 import { useParams } from 'react-router-dom';
-import './GetProds.css'
 import React from 'react';
 import { getDocs, collection, query, where } from 'firebase/firestore';
 import { db } from '../../services/firebase/firebaseConfig';
 
-const GetProds = () => {
+const ItemContainer = () => {
   
   const [prods, setProds] = useState([])
 
@@ -14,7 +14,7 @@ const GetProds = () => {
 
   useEffect(() => {
 
-    const collectionRef = categoryId ? 
+  const collectionRef = categoryId ? 
     query(collection(db, "prods"), where("category", "==", categoryId ))
     : collection(db, "prods")
     
@@ -35,10 +35,12 @@ const GetProds = () => {
   }, [categoryId])
 
   return(
-      <div>
-          <ProdsList prods={prods}/>
-      </div>
+    <div>
+      {/* <h1>{prods.title}</h1> */}
+      <h1>{prods.title}</h1>
+      <ItemList prods={prods}/>
+    </div>
   )
 }
 
-export default GetProds
+export default ItemContainer
