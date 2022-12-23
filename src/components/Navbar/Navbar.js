@@ -15,7 +15,7 @@ const Navbar = ({prods}) => {
             <img className='company-logo' src='/images/DunderMifflinLogo.png' alt='Dunder Mifflin Logo'/>
 
             <NavLink to="/home" className={({ isActive }) => isActive ? "active-option-nav" : "option-nav"}>Home</NavLink>
-            <NavLink to="/products" className={({ isActive }) => isActive ? "active-option-nav" : "option-nav"}>Products</NavLink>
+            <NavLink to="/prods" className={({ isActive }) => isActive ? "active-option-nav" : "option-nav"}>Products</NavLink>
             <NavLink to="/contact" className={({ isActive }) => isActive ? "active-option-nav" : "option-nav"}>Contact</NavLink>
             <NavLink to="/location" className={({ isActive }) => isActive ? "active-option-nav" : "option-nav"}>Location</NavLink>
             <NavLink to="/staff" className={({ isActive }) => isActive ? "active-option-nav" : "option-nav"}>Staff</NavLink>
