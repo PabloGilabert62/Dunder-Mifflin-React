@@ -22,19 +22,21 @@ function App() {
         <FavoritesProvider>
           <BrowserRouter>
             <Navbar/>
-            
             <Routes>
-            <Route path='/' element={<Start/>}/>
-            <Route path='/all' element={<ItemContainer/>}></Route>
-            <Route path='/products' element={<NavbarCategory/>}></Route>
-            <Route path='/category/:categoryId' element={<ItemContainer/>}/>
-            <Route path='/products/:prodsId' element={<ItemDetailContainer/> } />
-            <Route path='/cart' element={<Cart/>}/>
-            <Route path='/favorites' element={<Favorites/>}/>
-            <Route path='/home' element={<Home/>}/>
-            <Route path='/staff' element={<Staff/>}/>
-            <Route path='/location' element={<Location/>}/>
-            <Route path='/contact' element={<Contact/>}/>
+              <Route path='/all' element={<ItemContainer/>}></Route>
+              <Route path='/products' element={<NavbarCategory/>}></Route>
+              <Route path='/category/:categoryId' element={<ItemContainer/>}/>
+              <Route path='/products/:prodsId' element={<ItemDetailContainer/> }/>
+
+              {/* --- */}
+
+              <Route path='/' element={<Start/>}/>
+              <Route path='/cart' element={<Cart/>}/>
+              <Route path='/favorites' element={<Favorites/>}/>
+              <Route path='/home' element={<Home/>}/>
+              <Route path='/staff' element={<Staff/>}/>
+              <Route path='/location' element={<Location/>}/>
+              <Route path='/contact' element={<Contact/>}/>
             </Routes>
           </BrowserRouter>
         </FavoritesProvider>
