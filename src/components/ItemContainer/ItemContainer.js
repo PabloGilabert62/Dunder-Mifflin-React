@@ -9,7 +9,6 @@ import { db } from '../../services/firebase/firebaseConfig';
 const ItemContainer = () => {
   
   const [prods, setProds] = useState([])
-  const {isLoading, setIsLoading} = useState(true)
 
   const { categoryId } = useParams()
   useEffect(() => {
@@ -27,7 +26,6 @@ const ItemContainer = () => {
         
         setProds(prodsAdapted)
       })
-
       .catch(error => {
         console.log(error)
       })

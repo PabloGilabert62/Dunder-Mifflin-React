@@ -10,15 +10,15 @@ const Navbar = ({prods}) => {
     const {favorites} = useContext(FavoritesContext)
 
     return( 
-        <nav className='navbar- flexCenter'>
+        <nav className='navbar- flex-navbar'>
 
-            <img className='CompanyLogo' src='/images/DunderMifflinLogo.png' alt='Dunder Mifflin Logo'/>
+            <img className='company-logo' src='/images/DunderMifflinLogo.png' alt='Dunder Mifflin Logo'/>
 
-            <Link to="/all">All Products</Link>
-            <Link to="/category/gastronomy">Gastronomy</Link>
-            <Link to="/category/office">Office</Link>
-            <Link to="/category/paper">Paper</Link>
-            {/* <NavLink to='/category/categoria4' className={({ isActive }) => isActive ? 'ActiveOption' : 'Option' }>Paper</NavLink> */}
+            <NavLink to="/home" className={({ isActive }) => isActive ? "active-option-nav" : "option-nav"}>Home</NavLink>
+            <NavLink to="/products" className={({ isActive }) => isActive ? "active-option-nav" : "option-nav"}>Products</NavLink>
+            <NavLink to="/contact" className={({ isActive }) => isActive ? "active-option-nav" : "option-nav"}>Contact</NavLink>
+            <NavLink to="/location" className={({ isActive }) => isActive ? "active-option-nav" : "option-nav"}>Location</NavLink>
+            <NavLink to="/staff" className={({ isActive }) => isActive ? "active-option-nav" : "option-nav"}>Staff</NavLink>
 
             <Link to='/cart' className='cart-icon position-relative'>
                 <CardWidget/>
