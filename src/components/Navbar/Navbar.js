@@ -14,11 +14,10 @@ const Navbar = ({prods}) => {
 
             <img className='CompanyLogo' src='/images/DunderMifflinLogo.png' alt='Dunder Mifflin Logo'/>
 
-            <Link to='/'></Link>
-            <Link to="/category/All products">All Products</Link>
-            <Link to="/category/Gastronomy">Gastronomy</Link>
-            <Link to="/category/Office">Office</Link>
-            <Link to="/category/Paper">Paper</Link>
+            <Link to="/all">All Products</Link>
+            <Link to="/category/gastronomy">Gastronomy</Link>
+            <Link to="/category/office">Office</Link>
+            <Link to="/category/paper">Paper</Link>
             {/* <NavLink to='/category/categoria4' className={({ isActive }) => isActive ? 'ActiveOption' : 'Option' }>Paper</NavLink> */}
 
             <Link to='/cart' className='cart-icon position-relative'>

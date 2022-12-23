@@ -9,12 +9,12 @@ import { db } from '../../services/firebase/firebaseConfig';
 const ItemContainer = () => {
   
   const [prods, setProds] = useState([])
+  const {isLoading, setIsLoading} = useState(true)
 
   const { categoryId } = useParams()
-
   useEffect(() => {
 
-  const collectionRef = categoryId ? 
+    const collectionRef = categoryId ? 
     query(collection(db, "prods"), where("category", "==", categoryId ))
     : collection(db, "prods")
     
@@ -31,7 +31,6 @@ const ItemContainer = () => {
       .catch(error => {
         console.log(error)
       })
-      
   }, [categoryId])
 
   return(

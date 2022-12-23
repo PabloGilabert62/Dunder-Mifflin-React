@@ -9,8 +9,10 @@ import { db } from '../../services/firebase/firebaseConfig';
 const ItemDetailContainer = ({initial}) => {
 
     const {addItems} = useContext(CartContext)
-    const {prods, setProds} = useState({})
 
+    const {prods, setProds} = useState({})
+    const {isLoading, setIsLoading} = useState(true)
+    
     const {prodsId} = useParams()
     useEffect(() => {
 
@@ -26,10 +28,17 @@ const ItemDetailContainer = ({initial}) => {
             .catch(error => {
                 console.log(error)
             })
+            .finally(() => {
+                setIsLoading(false)
+            })
     }, [prodsId])
 
     const handleAddToCart = (quantity) => {
         addItems(prods,quantity)
+    }
+
+    if(isLoading){
+        return <p className='font-title'>Loading...</p>
     }
     
     //EACH DETAIL CARD
@@ -38,6 +47,8 @@ const ItemDetailContainer = ({initial}) => {
             <div className='cards-details '>
                 <img alt={prods.alt}/>
                 <p className='font-title'>{prods.title} ${prods.price}</p>
+                <div className='line'></div>
+                <p className='font-title'>{prods.category}</p>
                 <div className='line'></div>
                 <p className='font-title'>Available stock: {prods.stock}</p>
                 <div className='line'></div>
