@@ -8,19 +8,19 @@ const NavbarCategory = () => {
             <p className='title-category'>See our products below!</p>
             <div className='flex-category'>
 
-                <NavLink to="/all" className={({ isActive }) => isActive ? "active-option" : "option"}>
+                <NavLink to="/products/all" className={({ isActive }) => isActive ? "active-option" : "option"}>
                     All Products
                 </NavLink>
 
-                <NavLink to="/category/gastronomy" className={({ isActive }) => isActive ? "active-option" : "option"}>
+                <NavLink to="/products/category/gastronomy" className={({ isActive }) => isActive ? "active-option" : "option"}>
                     Gastronomy
                 </NavLink>
 
-                <NavLink to="/category/office" className={({ isActive }) => isActive ? "active-option" : "option"}>
+                <NavLink to="/products/category/office" className={({ isActive }) => isActive ? "active-option" : "option"}>
                     Office
                 </NavLink>
 
-                <NavLink to="/category/paper" className={({ isActive }) => isActive ? "active-option" : "option"}>
+                <NavLink to="/products/category/paper" className={({ isActive }) => isActive ? "active-option" : "option"}>
                     Paper
                 </NavLink>
             </div>

@@ -37,7 +37,7 @@ const ItemContainer = () => {
       <NavbarCategory/>
       <h1>{prods.title}</h1>
       <ItemList prods={prods}/>
-    </div>
+    </div>
   )
 }
 
