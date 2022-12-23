@@ -16,7 +16,7 @@ const ItemDetail = ({ prods, count }) => {
     return (
         <div className='flex-item-detail'>
             <div className='each-card'>
-                <img alt={prods.alt}/>
+                <img alt={prods.alt} src={prods.src}/>
                 <p className='font-title-item-detail'>{prods.title} ${prods.price}</p>
                 <div className='line-item-detail'></div>
                 <p className='font-title-item-detail'>Available stock: {prods.stock}</p>

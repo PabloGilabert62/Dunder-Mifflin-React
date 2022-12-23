@@ -5,9 +5,20 @@
 }
 
 .each-card{
-    margin-top: 5%;
+    margin-top: 2%;
     background-color: rgb(6, 76, 156);
     border: 2px solid rgb(6, 76, 156);
+    border-radius: 8px;
+    width: 190px;
+    height: auto;
+    margin-bottom: 2%;
+}
+
+.each-card img{
+    padding-top: 1.5%;
+    height: 180px;
+    width: 180px;
+    border: 2px;
     border-radius: 8px;
 }
 

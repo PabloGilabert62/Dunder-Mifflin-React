@@ -3,7 +3,6 @@ import React from 'react';
 import Start from './components/Start/Start';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 import Navbar from './components/Navbar/Navbar';
-import NavbarCategory from './components/NavbarCategory/NavbarCategory';
 import ItemContainer from './components/ItemContainer/ItemContainer'
 import Favorites from './components/Favorites/Favorites';
 import Cart from './components/Cart/Cart';
@@ -24,7 +23,6 @@ function App() {
             <Navbar/>
             <Routes>
               <Route path='/all' element={<ItemContainer/>}></Route>
-              <Route path='/products' element={<NavbarCategory/>}></Route>
               <Route path='/category/:categoryId' element={<ItemContainer/>}/>
               <Route path='/prods/:prodsId' element={<ItemDetailContainer/> }/>
 

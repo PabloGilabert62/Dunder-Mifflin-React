@@ -5,9 +5,14 @@ html{
 .navbar-{
     font-size: 150%;
     background-color: rgb(6, 76, 156);
-    height: 120px;
+    height: 90px;
     width: 100%;
     margin: 0px;
+}
+
+.company-logo{
+    height: 90px;
+    width: 170px;
 }
 
 .flex-navbar{
@@ -57,9 +62,4 @@ html{
     height: 65px;
     width: 65px;
     margin-right: 3%;
-}
-
-.company-logo{
-    height: 120px;
-    width: 200px;
 }

@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import React from 'react';
 import { getDocs, collection, query, where } from 'firebase/firestore';
 import { db } from '../../services/firebase/firebaseConfig';
+import NavbarCategory from '../NavbarCategory/NavbarCategory';
 
 const ItemContainer = () => {
   
@@ -33,9 +34,10 @@ const ItemContainer = () => {
 
   return(
     <div>
+      <NavbarCategory/>
       <h1>{prods.title}</h1>
       <ItemList prods={prods}/>
-    </div>
+    </div>
   )
 }
 
