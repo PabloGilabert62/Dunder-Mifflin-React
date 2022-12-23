@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import React from 'react';
 
 const Item = ({ prods }) => {
+    //ALL CARDS
     return(
         <div className='cards-grids'>
             <div className='cards'>
