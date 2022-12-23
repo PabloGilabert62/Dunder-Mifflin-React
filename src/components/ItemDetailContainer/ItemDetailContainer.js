@@ -10,8 +10,8 @@ const ItemDetailContainer = ({initial}) => {
 
     const {addItems} = useContext(CartContext)
 
-    const {prods, setProds} = useState({})
-    const {isLoading, setIsLoading} = useState(true)
+    const [prods, setProds] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
     
     const {prodsId} = useParams()
     useEffect(() => {
