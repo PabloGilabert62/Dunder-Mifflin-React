@@ -8,7 +8,7 @@ const NavbarCategory = () => {
             <p className='title-category'>See our products below!</p>
             <div className='flex-category'>
 
-                <NavLink to="/category/all" className={({ isActive }) => isActive ? "active-option" : "option"}>
+                <NavLink to="/all" className={({ isActive }) => isActive ? "active-option" : "option"}>
                     All Products
                 </NavLink>
 

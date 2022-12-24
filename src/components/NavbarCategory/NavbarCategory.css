@@ -41,13 +41,14 @@
 }
 
 .flex-category{
-    margin-top: 3%;
+    margin-top: 1%;
     display: flex;
     justify-content: space-around;
 }
 
 .title-category{
-    margin-top: 2%;
+    margin-top: 1%;
     font-size: 160%;
     font-weight: 700;
+    margin-bottom: 0px;
 }

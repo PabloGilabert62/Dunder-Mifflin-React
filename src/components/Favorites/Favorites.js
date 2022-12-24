@@ -6,6 +6,7 @@ import { FavoritesContext } from '../../context/FavoritesContext';
 const Favorites = () => {
 
     const {favorites} = useContext(FavoritesContext)
+    
     return(
         <div>
             <h1 className='title-fav'>Favorite items</h1>
