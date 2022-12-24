@@ -28,17 +28,6 @@
     margin: 0px;
 }
 
-.btn-favorite{
-    margin-top: 2%;
-    margin-bottom: 2%;
-    background-color: rgb(4, 4, 66);
-    color: white;
-    font-weight: 600;
-    border: 1px solid rgb(4, 4, 66);
-    border-radius: 8px;
-    font-size: 110%;
-}
-
 .line-item-detail{
     height: 3px;
     width: auto;
