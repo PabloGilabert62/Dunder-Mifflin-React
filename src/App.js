@@ -10,6 +10,7 @@ import Home from './components/Home/Home'
 import Contact from './components/Contact/Contact'
 import Location from './components/Location/Location'
 import Staff from './components/Staff/Staff'
+import Checkout from './components/Checkout/Checkout';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { FavoritesProvider } from './context/FavoritesContext';
 import { CartProvider } from './context/CartContext';
@@ -36,6 +37,7 @@ function App() {
               <Route path='/staff' element={<Staff/>}/>
               <Route path='/location' element={<Location/>}/>
               <Route path='/contact' element={<Contact/>}/>
+              <Route path='/checkout' element={<Checkout/>}/>
             </Routes>
           </BrowserRouter>
         </FavoritesProvider>

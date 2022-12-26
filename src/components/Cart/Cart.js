@@ -2,6 +2,8 @@ import './Cart.css';
 import React from 'react';
 import { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
+import { Link } from 'react-router-dom';
+import Checkout from '../Checkout/Checkout';
 
 const Cart = () => {
     
@@ -44,6 +46,8 @@ const Cart = () => {
             <div className='no-items'>
                 No items added yet, go to explore our products!
             </div>}
+
+            <Link to='/checkout'>Finalize purchase</Link>
         </div>
     )
 }
