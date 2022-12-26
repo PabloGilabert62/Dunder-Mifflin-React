@@ -64,6 +64,9 @@ const Checkout = () => {
                 setTimeout(() => {
                     useNavigate("/start")
                 }, 1000)
+
+                console.log(orderAdded.id)
+
             } else {
                 console.error("Products out of stock")
             }
