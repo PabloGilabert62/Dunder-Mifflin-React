@@ -3,17 +3,10 @@ import React from 'react';
 import { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
 import { Link } from 'react-router-dom';
-import Checkout from '../Checkout/Checkout';
 
 const Cart = () => {
     
-    let totalAdd = 0;
-
-    const total = (a, b) => {
-        totalAdd += (a * b)
-    }
-
-    const {items, removeItem} = useContext(CartContext)
+    const {items, removeItem, total} = useContext(CartContext)
     
     return(
         <div>
@@ -28,8 +21,6 @@ const Cart = () => {
                             <h5>Items in cart: {item.count}</h5>
                             <h5>Subtotal: ${item.count * item.price}</h5>
 
-                            {total(item.price, item.count)}
-
                             <button onClick={() => {item.id && removeItem(item.id)}} className='eliminate-item'> 
                                 Eliminate Item
                             </button>
@@ -38,14 +29,14 @@ const Cart = () => {
                 )
             })}
             
-            {totalAdd !== 0 ?
+           
             <div>
-                <div className='total'>Total: $ {totalAdd}</div>
+                <div className='total'>Total: ${total()}</div>
                 <div><button className='eliminate-cart'>Eliminate Cart</button></div>
-            </div> :
+            </div>
             <div className='no-items'>
                 No items added yet, go to explore our products!
-            </div>}
+            </div>
 
             <Link to='/checkout'>Finalize purchase</Link>
         </div>

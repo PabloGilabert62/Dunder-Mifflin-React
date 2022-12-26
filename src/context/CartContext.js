@@ -7,6 +7,16 @@ export const CartProvider = ({children}) => {
 
     const [items, setItems] = useState([])
 
+    const total = () => {
+        let acc = 0;
+
+        items.forEach(item => {
+            acc += item.count * item.price
+        })
+
+        return acc
+    }
+
     const addItems = (itemsToAdd, count) => {
 
         const newObj = {...itemsToAdd, count}
@@ -17,11 +27,11 @@ export const CartProvider = ({children}) => {
             
           const newProducts =  items.map(item => {
                 if(item.id === newObj.id){
-                    const newProduct = {
+                    const newProducts = {
                         ...item,
                         count: item.count + count
                     }
-                    return newProduct
+                    return newProducts
                 } else{
                     return item
                 }
@@ -38,6 +48,10 @@ export const CartProvider = ({children}) => {
         return cant
     }
 
+    const clearCart = () => {
+        setItems([])
+    }
+
     const isInCart = (id) => {
         return items.some(item => item.id === id)
     }
@@ -48,7 +62,7 @@ export const CartProvider = ({children}) => {
     }
 
     return(
-        <CartContext.Provider value={{items, setItems, addItems, isInCart, removeItem, getCount}}>
+        <CartContext.Provider value={{items, setItems, addItems, isInCart, removeItem, getCount, total, clearCart}}>
             {children}
         </CartContext.Provider>
     )
