@@ -19,10 +19,6 @@ const ItemCount = ({stock, initial, onAddToCart}) => {
         } 
     }
 
-    const toFalse = () => {
-        setButton(false)
-    }
-
     return (
         <div>
             <p className='font-title-count'>Items added: {count}</p>
