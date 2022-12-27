@@ -1,5 +1,6 @@
 import './Checkout.css';
-import React, { useState } from 'react';
+import React from 'react';
+import { useState } from 'react';
 import { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
 import { collection, getDocs, query, where, documentId, writeBatch, addDoc } from 'firebase/firestore';
@@ -44,7 +45,7 @@ const Checkout = () => {
                 const stockDb = dataDoc.stock
     
                 const prodsAddedToCart = items.find(item => item.id === doc.id)
-                const prodsQuantity = prodsAddedToCart?.count
+                const prodsQuantity = prodsAddedToCart.count
     
                 if(stockDb >= prodsQuantity){
                     batch.update(doc.ref, { stock: stockDb - prodsQuantity })
@@ -62,13 +63,13 @@ const Checkout = () => {
                 clearCart()
 
                 setTimeout(() => {
-                    useNavigate("/start")
+                    useNavigate("/")
                 }, 1000)
 
                 console.log(orderAdded.id)
 
             } else {
-                console.error("Products out of stock")
+                alert("Products out of stock")
             }
         } catch(error) {
             console.error(error)
