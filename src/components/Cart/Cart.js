@@ -10,7 +10,8 @@ const Cart = () => {
     
     return(
         <div>
-            <span className='title'>Items in cart</span>
+            {total() !== 0 &&
+            <span className='title'>Items in cart</span>}
             {items.map(item => {
                 return( 
                     <div className='flex-center'>
@@ -29,16 +30,21 @@ const Cart = () => {
                 )
             })}
             
-           
+            <div className='margin-finalize'>
+                {total() !== 0 &&
+                <Link className='finalize-purchase' to='/checkout'>Finalize purchase</Link>}
+            </div>
+
+            {total() === 0 &&   
+            <div className='no-items'>
+                No items added yet, go to explore our products!
+            </div>} 
+
+            {total() !== 0 &&
             <div>
                 <div className='total'>Total: ${total()}</div>
                 <div><button className='eliminate-cart'>Eliminate Cart</button></div>
-            </div>
-            <div className='no-items'>
-                No items added yet, go to explore our products!
-            </div>
-
-            <Link to='/checkout'>Finalize purchase</Link>
+            </div>}
         </div>
     )
 }
