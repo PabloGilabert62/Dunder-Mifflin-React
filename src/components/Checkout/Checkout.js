@@ -63,7 +63,7 @@ const Checkout = () => {
                 clearCart()
 
                 setTimeout(() => {
-                    useNavigate("/")
+                    navigate("/")
                 }, 1000)
 
                 console.log(orderAdded.id)
