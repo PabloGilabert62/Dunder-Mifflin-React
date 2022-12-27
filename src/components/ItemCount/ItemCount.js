@@ -5,6 +5,7 @@ import { useState } from 'react';
 const ItemCount = ({stock, initial, onAddToCart}) => {
 
     const [count, setCount] = useState(initial);
+    const [button, setButton] = useState(true)
 
     const handleSubstract = () => {
         if (count > 1) {
@@ -22,9 +23,12 @@ const ItemCount = ({stock, initial, onAddToCart}) => {
         <div>
             <p className='font-title-count'>Items added: {count}</p>
             <div className='line-count'></div>
-            <button onClick={handleAdd} className='buttonPlus'>+</button>
-            <button onClick={()=> onAddToCart(count)} className='buttonAdd'>Add to cart</button>
-            <button onClick={handleSubstract} className='buttonMinus'>-</button>
+            
+            <div>
+                <button onClick={handleAdd} className='buttonPlus'>+</button>
+                <button onClick={() => count != 0 && onAddToCart(count)} className='buttonAdd'>Add to cart</button>
+                <button onClick={handleSubstract} className='buttonMinus'>-</button>
+            </div>
         </div>
     )
 

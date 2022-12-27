@@ -22,7 +22,7 @@ const ItemDetail = ({ prods, count }) => {
                 <div className='line-item-detail'></div>
                 <p className='font-title-item-detail'>Available stock: {prods.stock}</p>
                 <div className='line-item-detail'></div>
-                <ItemCount initial={1} stock={prods.stock} onAddToCart={handleAddToCart}/>
+                <ItemCount initial={0} stock={prods.stock} onAddToCart={handleAddToCart}/>
                 <FavoriteButton/>
             </div>
         </div>
