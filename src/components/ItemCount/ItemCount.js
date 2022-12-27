@@ -31,7 +31,7 @@ const ItemCount = ({stock, initial, onAddToCart}) => {
             {button === true &&
             <div>
                 <button onClick={handleAdd} className='buttonPlus'>+</button>
-                <button onClick={() => count != 0 && onAddToCart(count)} className='buttonAdd'>Add to cart</button>
+                <button onClick={() => count !== 0 && onAddToCart(count)} className='buttonAdd'>Add to cart</button>
                 <button onClick={handleSubstract} className='buttonMinus'>-</button>
             </div>}
 
