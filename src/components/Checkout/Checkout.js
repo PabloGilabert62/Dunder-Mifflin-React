@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 const Checkout = () => {
 
     const { items, total, clearCart } = useContext(CartContext)
-    cosnt [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(false)
 
     const navigate = useNavigate()
 
@@ -77,10 +77,10 @@ const Checkout = () => {
         }
     }
         
-        
-
     if(loading){
-        <h2>Loading order...</h2>
+        return(
+            <h2>Loading order...</h2>
+        ) 
     }
 
     return(
