@@ -19,16 +19,26 @@ const ItemCount = ({stock, initial, onAddToCart}) => {
         } 
     }
 
+    const toFalse = () => {
+        setButton(false)
+    }
+
     return (
         <div>
             <p className='font-title-count'>Items added: {count}</p>
             <div className='line-count'></div>
-            
+
+            {button === true &&
             <div>
                 <button onClick={handleAdd} className='buttonPlus'>+</button>
                 <button onClick={() => count != 0 && onAddToCart(count)} className='buttonAdd'>Add to cart</button>
                 <button onClick={handleSubstract} className='buttonMinus'>-</button>
-            </div>
+            </div>}
+
+            {button === false &&
+            <div className='items-added'>
+                Items added: {count}
+            </div>}
         </div>
     )
 
