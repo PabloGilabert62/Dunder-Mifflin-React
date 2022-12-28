@@ -3,15 +3,18 @@ import React from 'react';
 import ItemCount from "../ItemCount/ItemCount";
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
-import FavoriteButton from '../FavoriteButton/FavoriteButton';
+import { FavoritesContext } from '../../context/FavoritesContext';
 
-const ItemDetail = ({ prods, count }) => {
+const ItemDetail = ({ prods }) => {
 
     const {addItems} = useContext(CartContext)
+    const {addFavorites, removeFavorites, isInFavorites} = useContext(FavoritesContext)
 
     const handleAddToCart = (quantity) => {
         addItems(prods,quantity)
     }
+
+    const isAdded = isInFavorites(prods.id)
 
     //EACH CARD
     return (
@@ -22,8 +25,13 @@ const ItemDetail = ({ prods, count }) => {
                 <div className='line-item-detail'></div>
                 <p className='font-title-item-detail'>Available stock: {prods.stock}</p>
                 <div className='line-item-detail'></div>
+
                 <ItemCount initial={0} stock={prods.stock} onAddToCart={handleAddToCart}/>
-                <FavoriteButton/>
+
+                <button className='btn-favorite' 
+                    onClick={() => {isAdded ? removeFavorites(prods.id) : addFavorites(prods)}}>
+                    {isAdded ? 'Remove from favorites' : 'Add to favorites'}
+                </button>
             </div>
         </div>
     )
