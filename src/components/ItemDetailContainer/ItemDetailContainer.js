@@ -1,43 +1,44 @@
-import "./ItemDetailContainer.css";
-import React, { useEffect, useState } from 'react';
-import { getDoc, doc } from 'firebase/firestore';
+import './ItemDetailContainer.css';
+import { useState, useEffect } from 'react';
+import ItemList from '../ItemList/ItemList';
 import { useParams } from 'react-router-dom';
-import { db } from '../../services/firebase/firebaseConfig';
-import ItemDetail from "../ItemDetail/ItemDetail";
-import NavbarCategory from "../NavbarCategory/NavbarCategory";
+import React from 'react';
+import NavbarCategory from '../NavbarCategory/NavbarCategory';
+import { getProds } from '../../services/firebase/firestore/prods';
 
-const ItemDetailContainer = ({initial}) => {
-    const [prods, setProds] = useState([])
-    const [isLoading, setIsLoading] = useState(true)
-    const {prodsId} = useParams()
-    useEffect(() => {
+const ItemDetailContainer = () => {
+  
+  const [prods, setProds] = useState([])
+  const [loading, setLoading] = useState(true)
 
-        const docRef = doc(db, "prods", prodsId)
+  const { categoryId } = useParams()
+  useEffect(() => {
 
-        getDoc(docRef)
-            .then(doc => {
+    setLoading(true)
+    getProds(categoryId)
 
-                const data = doc.data()
-                const prodAdapted = { id: doc.id, ...data}
-                setProds(prodAdapted)
-            })
-            .catch(error => {
-                console.log(error)
-            })
-            .finally(() => {
-                setIsLoading(false)
-            })
-    }, [prodsId])
+    .then(prods => {
+        setProds(prods)
+    })
+    .catch(error => {
+        console.error(error)
+    })
+    .finally(() => {
+        setLoading(false)
+    })
 
-    if(isLoading){
-        return <p className='font-title'>Loading...</p>
-    }
-    
-    return(
-        <div>
-            <NavbarCategory/>
-            <ItemDetail prods={prods}/>
-        </div>
-    )
+  }, [categoryId])
+
+  if(loading){
+    return <h1>Loading...</h1>
+  }
+
+  return(
+    <div>
+      <NavbarCategory/>
+      <ItemList prods={prods}/>
+    </div>
+  )
 }
+
 export default ItemDetailContainer

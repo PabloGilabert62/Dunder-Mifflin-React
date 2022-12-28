@@ -3,7 +3,7 @@ import React from 'react';
 import Start from './components/Start/Start';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 import Navbar from './components/Navbar/Navbar';
-import ItemContainer from './components/ItemContainer/ItemContainer'
+import ItemDetail from './components/ItemDetail/ItemDetail';
 import Favorites from './components/Favorites/Favorites';
 import Cart from './components/Cart/Cart';
 import Home from './components/Home/Home'
@@ -23,9 +23,9 @@ function App() {
           <BrowserRouter>
             <Navbar/>
             <Routes>
-              <Route path='/prods' element={<ItemContainer/>}></Route>
-              <Route path='/all' element={<ItemContainer/>}></Route>
-              <Route path='/category/:categoryId' element={<ItemContainer/>}/>
+              <Route path='/prods' element={<ItemDetail/>}></Route>
+              <Route path='/all' element={<ItemDetail/>}></Route>
+              <Route path='/category/:categoryId' element={<ItemDetail/>}/>
               <Route path='/prods/:prodsId' element={<ItemDetailContainer/> }/>
 
               {/* --- */}
