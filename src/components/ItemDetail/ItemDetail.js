@@ -7,29 +7,29 @@ import { FavoritesContext } from '../../context/FavoritesContext';
 
 const ItemDetail = ({ prods }) => {
 
-    const {addItems} = useContext(CartContext)
+    const {items, addItems} = useContext(CartContext)
     const {addFavorites, removeFavorites, isInFavorites} = useContext(FavoritesContext)
 
     const handleAddToCart = (quantity) => {
         addItems(prods,quantity)
     }
 
-    const isAdded = isInFavorites(prods.id)
+    const isAdded = isInFavorites(items.id)
 
     //EACH CARD
     return (
         <div className='flex-item-detail'>
             <div className='each-card'>
-                <img alt={prods.alt} src={prods.src}/>
-                <p className='font-title-item-detail'>{prods.title} ${prods.price}</p>
+                <img alt={items.alt} src={items.src}/>
+                <p className='font-title-item-detail'>{items.title} ${items.price}</p>
                 <div className='line-item-detail'></div>
-                <p className='font-title-item-detail'>Available stock: {prods.stock}</p>
+                <p className='font-title-item-detail'>Available stock: {items.stock}</p>
                 <div className='line-item-detail'></div>
 
-                <ItemCount initial={0} stock={prods.stock} onAddToCart={handleAddToCart}/>
+                <ItemCount initial={0} stock={items.stock} onAddToCart={handleAddToCart}/>
 
                 <button className='btn-favorite' 
-                    onClick={() => {isAdded ? removeFavorites(prods.id) : addFavorites(prods)}}>
+                    onClick={() => {isAdded ? removeFavorites(items.id) : addFavorites(items)}}>
                     {isAdded ? 'Remove from favorites' : 'Add to favorites'}
                 </button>
             </div>

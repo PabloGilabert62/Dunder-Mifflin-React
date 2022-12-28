@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { getDoc, doc } from 'firebase/firestore';
 import { useParams } from 'react-router-dom';
 import { db } from '../../services/firebase/firebaseConfig';
-import ItemDetail from "../ItemDetail/ItemDetail";
+import ItemList from "../ItemList/ItemList";
 import NavbarCategory from "../NavbarCategory/NavbarCategory";
 
 const ItemListContainer = ({initial}) => {
@@ -36,7 +36,7 @@ const ItemListContainer = ({initial}) => {
     return(
         <div>
             <NavbarCategory/>
-            <ItemDetail prods={prods}/>
+            <ItemList prods={prods}/>
         </div>
     )
 }
