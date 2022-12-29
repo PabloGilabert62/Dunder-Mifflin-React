@@ -2,6 +2,7 @@ import './App.css';
 import React from 'react';
 import Start from './components/Start/Start';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import Navbar from './components/Navbar/Navbar';
 import Favorites from './components/Favorites/Favorites';
 import Cart from './components/Cart/Cart';
@@ -13,8 +14,6 @@ import Checkout from './components/Checkout/Checkout';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { FavoritesProvider } from './context/FavoritesContext';
 import { CartProvider } from './context/CartContext';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import ItemDetail from './components/ItemDetail/ItemDetail';
 
 function App() {
   return (
@@ -24,9 +23,9 @@ function App() {
           <BrowserRouter>
             <Navbar/>
             <Routes>
-              <Route path='/prods' element={<ItemDetail/>}></Route>
-              <Route path='/all' element={<ItemDetail/>}></Route>
-              <Route path='/category/:categoryId' element={<ItemDetail/>}/>
+              <Route path='/prods' element={<ItemListContainer/>}></Route>
+              <Route path='/all' element={<ItemListContainer/>}></Route>
+              <Route path='/category/:categoryId' element={<ItemListContainer/>}/>
               <Route path='/prods/:prodsId' element={<ItemDetailContainer/> }/>
 
               {/* --- */}
