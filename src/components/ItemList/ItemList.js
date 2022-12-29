@@ -14,4 +14,4 @@ const ItemList = ({ prods }) => {
     )
 }
 
-export default (ItemList)
+export default ItemList

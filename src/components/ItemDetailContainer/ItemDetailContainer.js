@@ -3,44 +3,49 @@ import { useState, useEffect } from 'react';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import React from 'react';
 import NavbarCategory from '../NavbarCategory/NavbarCategory';
-import { getDoc, doc } from 'firebase/firestore';
 import { useParams } from 'react-router-dom';
+import { doc } from 'firebase/firestore';
 import { db } from '../../services/firebase/firebaseConfig';
+import { getDoc } from 'firebase/firestore';
 
 const ItemDetailContainer = () => {
   
   const [prods, setProds] = useState([])
   const [loading, setLoading] = useState(true)
 
-  console.log(prods)
+  const {productId} = useParams()
+    useEffect(() => {
 
-  const {prodsId} = useParams()
+      const prodsRef = doc(db, 'prods', productId) 
 
-  useEffect(() => {
-    const docRef = doc(db, "prods", prodsId)
+      getDoc(prodsRef)
+      .then(response => {
 
-    getDoc(docRef)
-    .then(doc => {
-      const data = doc.data()
-      const prodAdapted = { id: doc.id, ...data}
-      setProds(prodAdapted)
-    })
-    .catch(error => {
-      console.log(error)
-    })
-    .finally(() => {
-      setLoading(false)
-    })
-  }, [prodsId])
+        const data = response.data()
+        const prodsAdapted = { id: response.id, ...data}
+        setProds(prodsAdapted)
+        
+      })
 
-  if(loading){
-    return <h1>Loading...</h1>
-  }
+      .catch(error => {
+        console.log(error)
+      })
 
+      .finally(() => {
+        setLoading(false)
+      })
+
+    }, [productId])
+
+    if(loading) {
+      return <h1>Loading...</h1>
+    }
+ 
   return(
     <div>
       <NavbarCategory/>
-      <ItemDetail prods={prods}/>
+      {/* <ItemDetail prods={prods}/> */}
+      <ItemDetail {...prods}/>
     </div>
   )
 }
