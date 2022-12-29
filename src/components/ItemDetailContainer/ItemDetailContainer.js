@@ -13,10 +13,10 @@ const ItemDetailContainer = () => {
   const [prods, setProds] = useState([])
   const [loading, setLoading] = useState(true)
 
-  const {productId} = useParams()
+  const {prodsId} = useParams()
     useEffect(() => {
 
-      const prodsRef = doc(db, 'prods', productId) 
+      const prodsRef = doc(db, 'prods', prodsId) 
 
       getDoc(prodsRef)
       .then(response => {
@@ -35,7 +35,7 @@ const ItemDetailContainer = () => {
         setLoading(false)
       })
 
-    }, [productId])
+    }, [prodsId])
 
     if(loading) {
       return <h1>Loading...</h1>
