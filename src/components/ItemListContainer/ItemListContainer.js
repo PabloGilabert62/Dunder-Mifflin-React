@@ -4,7 +4,7 @@ import ItemList from "../ItemList/ItemList";
 import NavbarCategory from "../NavbarCategory/NavbarCategory";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
-import { getDocs, collection } from "firebase/firestore";
+import { getDocs, collection, query, where } from "firebase/firestore";
 import { db } from '../../services/firebase/firebaseConfig';
 
 const ItemListContainer = ({initial}) => {
@@ -16,11 +16,30 @@ const ItemListContainer = ({initial}) => {
     useEffect(() => {
         setLoading(true)
 
-        const collectionRef = collection(db, "prods")
+        const collectionRef = categoryId 
+        ? query(collection(db, "prods"), where("category", "==", categoryId))
+        : collection(db, "prods")
 
         getDocs(collectionRef)
         .then(response => {
-            console.log(response)
+
+            console.log(response.docs)
+
+            const prodsAdapted = response.docs.map(doc => {
+                const data = doc.data()
+
+                return {id: doc.id, ...data}
+            })
+
+            setProds(prodsAdapted)
+        })
+
+        .catch(error => {
+            console.log(error)
+        })
+        
+        .finally(() => {
+            setLoading(false)
         })
 
     }, [categoryId])
