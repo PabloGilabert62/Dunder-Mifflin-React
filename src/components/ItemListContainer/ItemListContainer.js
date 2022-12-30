@@ -4,44 +4,26 @@ import ItemList from "../ItemList/ItemList";
 import NavbarCategory from "../NavbarCategory/NavbarCategory";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
-import { query } from "firebase/firestore";
-import { collection } from "firebase/firestore";
-import { db } from "../../services/firebase/firebaseConfig";
-import { where } from "firebase/firestore";
-import { getDocs } from "firebase/firestore";
+import { getDocs, collection } from "firebase/firestore";
+import { db } from '../../services/firebase/firebaseConfig';
 
 const ItemListContainer = ({initial}) => {
 
     const [prods, setProds] = useState([])
     const [loading, setLoading] = useState(true)
-
     const {categoryId} = useParams()
-    console.log(categoryId);
+
     useEffect(() => {
         setLoading(true)
-        if(!categoryId){
-            const prodsRef = query(collection(db, 'prods'))
-        getDocs(prodsRef)
-            .then(response => {
-                const prodsAdapted = response.docs.map(doc => {
-                    const data = doc.data()
-                    return { id: doc.id, ...data}
-                })
-                setProds(prodsAdapted)
-            })
-            .catch(error => {
-                console.log(error)
-            })
-            .finally(() => {
-                setLoading(false)
-            })
-        }else {
-            console.log("cae en else");
-            // ACA HACER EL LLAMADO PARA QUE FIREBASE TE MANDE TODA LA LISTA DE PRODUCTOS
-        }
-        
 
-    }, [categoryId])
+        const collectionRef = collection(db, "prods")
+
+        getDocs(collectionRef)
+        .then(response => {
+            console.log(response)
+        })
+
+    }, [categoryId])
 
     if(loading) {
         return <h1>Loading...</h1>
