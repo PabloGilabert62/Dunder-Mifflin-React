@@ -16,10 +16,11 @@ const ItemListContainer = ({initial}) => {
     const [loading, setLoading] = useState(true)
 
     const {categoryId} = useParams()
+    console.log(categoryId);
     useEffect(() => {
         setLoading(true)
-        const prodsRef = categoryId && query(collection(db, 'prods'), where('category', '==', categoryId))
-            
+        if(!categoryId){
+            const prodsRef = query(collection(db, 'prods'))
         getDocs(prodsRef)
             .then(response => {
                 const prodsAdapted = response.docs.map(doc => {
@@ -34,8 +35,13 @@ const ItemListContainer = ({initial}) => {
             .finally(() => {
                 setLoading(false)
             })
+        }else {
+            console.log("cae en else");
+            // ACA HACER EL LLAMADO PARA QUE FIREBASE TE MANDE TODA LA LISTA DE PRODUCTOS
+        }
+        
 
-    }, [categoryId])
+    }, [categoryId])
 
     if(loading) {
         return <h1>Loading...</h1>
@@ -48,4 +54,5 @@ const ItemListContainer = ({initial}) => {
         </div>
     )
 }
+
 export default ItemListContainer
