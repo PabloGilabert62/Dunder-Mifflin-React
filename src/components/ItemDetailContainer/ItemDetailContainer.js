@@ -6,8 +6,13 @@ import NavbarCategory from '../NavbarCategory/NavbarCategory';
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getProdsById } from '../../services/firebase/firestore/prods';
+import { useAsync } from '../../hooks/useAsync';
 
 const ItemDetailContainer = () => {
+
+  // const { prodsId } = useParams()
+  // const getProdsWithId = () => getProdsById(prodsId)
+  // const { data: prods, error, loading } = useAsync(getProdsWithId, [prodsId])
   
   const [prods, setProds] = useState([])
   const [loading, setLoading] = useState(true)
@@ -31,6 +36,9 @@ const ItemDetailContainer = () => {
   if(loading){
     return <h1>Loading...</h1>
   }
+
+  // if(error){
+  // return <h1>Error, press F5 to reload</h1>}
 
   return(
     <div>
