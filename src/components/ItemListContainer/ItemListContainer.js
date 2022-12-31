@@ -1,36 +1,25 @@
 import "./ItemListContainer.css";
-import React, { useState } from 'react';
+import React from "react";
 import ItemList from "../ItemList/ItemList";
 import NavbarCategory from "../NavbarCategory/NavbarCategory";
 import { useParams } from "react-router-dom";
-import { useEffect } from "react";
 import { getProds } from "../../services/firebase/firestore/prods";
+import { useAsync } from "../../hooks/useAsync";
 
 const ItemListContainer = ({initial}) => {
 
-    const [prods, setProds] = useState([])
-    const [loading, setLoading] = useState(true)
-    const {categoryId} = useParams()
+    const { categoryId } = useParams()
+    
+    const getProdsByCategory = () => getProds(categoryId)
 
-    useEffect(() => {
-        
-        setLoading(true)
-        getProds(categoryId)
-
-        .then(prods => {
-            setProds(prods)
-        })
-        .catch(error => {
-            console.error(error)
-        })
-        .finally(() => {
-            setLoading(false)
-        })
-
-    }, [categoryId])
+    const { data: prods, error, loading } = useAsync(getProdsByCategory, [categoryId])
 
     if(loading) {
         return <h1>Loading...</h1>
+    }
+
+    if(error){
+        return <h1>Error, press F5 to reload</h1>
     }
 
     return(
