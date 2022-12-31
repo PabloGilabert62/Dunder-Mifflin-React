@@ -15,18 +15,18 @@ const Checkout = () => {
 
     const handleCreateOrder = async () => {
         setLoading(true)
-        
-        createOrder(async)
+
+        createOrder()
 
         .then(prods => {
             setProds(prods)
-          })
-          .catch(error => {
+        })
+        .catch(error => {
             console.error(error)
-          })
-          .finally(() => {
+        })
+        .finally(() => {
             setLoading(false)
-          })
+        })
     }
         
     if(loading){
