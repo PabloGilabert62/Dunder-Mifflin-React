@@ -3,7 +3,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
-import { collection, getDocs, query, where, documentId, writeBatch, addDoc } from 'firebase/firestore';
+import { collection, getDocs, query, where, documentId, writeBatch, addDoc, updateDoc } from 'firebase/firestore';
 import { db } from '../../services/firebase/firebaseConfig';
 import { useNavigate } from 'react-router-dom';
 
@@ -80,14 +80,20 @@ const Checkout = () => {
         
     if(loading){
         return(
-            <h2>Loading order...</h2>
+            <h1>Loading order...</h1>
         ) 
     }
+
+    // const update = () => {
+    //     const prodsRef = doc(db, "prods", "a45s6da16qw456")
+    //     updateDoc(prodsRef, {stock: 10})
+    // }
 
     return(
         <div>
             <h2>Checkout</h2>
             <button onClick={handleCreateOrder}>Finalize</button>
+            {/* <button onClick={update}>Update stock</button> */}
         </div>
     )
 }
