@@ -19,11 +19,10 @@ const ItemListContainer = ({initial}) => {
     const {categoryId} = useParams()
 
     useEffect(() => {
-        
         setLoading(true)
 
         getProds(categoryId)
-
+        
         .then(prods => {
             setProds(prods)
         })
@@ -33,7 +32,6 @@ const ItemListContainer = ({initial}) => {
         .finally(() => {
             setLoading(false)
         })
-
     }, [categoryId])
 
     if(loading) {
