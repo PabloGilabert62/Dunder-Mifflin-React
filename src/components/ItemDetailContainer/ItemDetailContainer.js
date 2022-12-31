@@ -5,8 +5,7 @@ import React from 'react';
 import NavbarCategory from '../NavbarCategory/NavbarCategory';
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { getDoc, doc } from 'firebase/firestore';
-import { db } from '../../services/firebase/firebaseConfig';
+import { getProdsById } from '../../services/firebase/firestore/prods';
 
 const ItemDetailContainer = () => {
   
@@ -15,25 +14,18 @@ const ItemDetailContainer = () => {
   const {prodsId} = useParams()
 
   useEffect(() => {
-    const docRef = doc(db, "prods", prodsId)
 
-    getDoc(docRef)
+    getProdsById(prodsId)
 
-    .then(doc => {
-
-      const data = doc.data()
-      const prodsAdapted = {id: doc.id, ...data}
-      setProds(prodsAdapted)
-
+    .then(prods => {
+      setProds(prods)
     })
     .catch(error => {
-      console.log(error)
+      console.error(error)
     })
-
     .finally(() => {
       setLoading(false)
     })
-
   }, [prodsId])
 
   if(loading){
