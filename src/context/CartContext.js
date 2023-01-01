@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { createContext } from "react";
+import Swal from 'sweetalert2';
 
 export const CartContext = createContext()
 
@@ -62,7 +63,7 @@ export const CartProvider = ({children}) => {
     }
 
     return(
-        <CartContext.Provider value={{items, setItems, addItems, isInCart, removeItem, getCount, total, clearCart}}>
+        <CartContext.Provider value={{items, setItems, addItems, isInCart, removeItem, getCount, total, clearCart }}>
             {children}
         </CartContext.Provider>
     )

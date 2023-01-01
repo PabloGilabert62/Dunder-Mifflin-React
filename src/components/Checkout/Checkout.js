@@ -6,24 +6,28 @@ import { CartContext } from '../../context/CartContext';
 import { collection, getDocs, query, where, documentId, writeBatch, addDoc, updateDoc } from 'firebase/firestore';
 import { db } from '../../services/firebase/firebaseConfig';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const Checkout = () => {
 
     const { items, total, clearCart } = useContext(CartContext)
     const [loading, setLoading] = useState(false)
+    const [name, setName] = useState ("")
+    const [lastname, setLastname] = useState ("")
+    const [email, setEmail] = useState ("")
+    const [repeatEmail, setRepeatEmail] = useState ("")
 
     const navigate = useNavigate()
 
     const handleCreateOrder = async () => {
-
         setLoading(true)
-
         try{
             const orderObjects = {
                 buyer: {
-                    name: "Pablo Gilabert",
-                    mail: "pablo.hg@hotmail.es",
-                    phone: "123456789"
+                    name: name,
+                    lastname: lastname,
+                    email: email,
                 },
                 items: items,
                 total: total()
@@ -61,15 +65,8 @@ const Checkout = () => {
                 const orderAdded = await addDoc(orderRef, orderObjects)
 
                 clearCart()
-
-                setTimeout(() => {
-                    navigate("/")
-                }, 1000)
-
+                navigate("/")
                 console.log(orderAdded.id)
-
-            } else {
-                alert("Products out of stock")
             }
         } catch(error) {
             console.error(error)
@@ -77,23 +74,47 @@ const Checkout = () => {
             setLoading(false)
         }
     }
-        
     if(loading){
         return(
             <h1>Loading order...</h1>
         ) 
     }
 
-    // const update = () => {
-    //     const prodsRef = doc(db, "prods", "a45s6da16qw456")
-    //     updateDoc(prodsRef, {stock: 10})
-    // }
-
     return(
         <div>
-            <h2>Checkout</h2>
-            <button onClick={handleCreateOrder}>Finalize</button>
-            {/* <button onClick={update}>Update stock</button> */}
+            <h2 className='checkout'>Checkout form</h2>
+
+            <form>
+                <div>
+                    <div>Name</div>
+                    <input value={name} onChange={event => {setName(event.target.value)}} ></input>
+                </div>
+
+                <div>
+                    <div>Lastname</div>
+                    <input value={lastname} onChange={event => {setLastname(event.target.value)}}></input>
+                </div>
+
+                <div>
+                    <div>Email</div>
+                    <input value={email} onChange={event => {setEmail(event.target.value)}}></input>
+                </div>
+
+                <div>
+                    <div>Repeat email</div>
+                    <input value={repeatEmail} onChange={event => {setRepeatEmail(event.target.value)}}></input>
+                </div>
+
+                {
+                    name !== "" &&
+                    lastname !== "" && 
+                    email !== "" && 
+                    repeatEmail !== "" && 
+                    email === repeatEmail &&
+                    <button onClick={handleCreateOrder}>Finalize order</button>
+                }
+            </form>
+
         </div>
     )
 }
