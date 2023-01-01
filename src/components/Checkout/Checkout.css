@@ -1,9 +1,57 @@
+.checkout-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .checkout{
     margin-top: 2%;
     margin-bottom: 2%;
+    font-size: 170%;
+    font-weight: 650;
 }
 
 .buy-video{
     height: 260px;
     width: 450px;
+}
+
+.input-checkout{
+    background-color: rgb(6, 76, 156);
+    width: 25%;
+    padding: 2%;
+    border: 1px solid rgb(6, 76, 156);
+    border-radius: 8px;
+}
+
+.input-width{
+    margin-bottom: 4%;
+    width: 100%;
+    text-align: center;
+    background-color: rgb(190, 190, 190);
+    border: 1px solid rgb(6, 76, 156);
+    border-radius: 8px;
+    font-size: 110%;
+}
+
+.finalize-order{
+    margin-top: 10%;
+    background-color: rgb(4, 4, 66);
+    border: 1px solid rgb(4, 4, 66);
+    border-radius: 8px;
+    color: white;
+    font-size: 120%;
+    font-weight: 600;
+    padding: 3%;
+}
+
+.finalize-order:hover{
+    transition: all 0.3s;
+    padding: 5%;
+}
+
+.title-input{
+    font-size: 120%;
+    font-weight: 600;
+    margin-bottom: 1%;
 }

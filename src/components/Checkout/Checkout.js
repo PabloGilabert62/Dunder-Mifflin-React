@@ -91,38 +91,60 @@ const Checkout = () => {
 
     return(
         <div>
-            <h2 className='checkout'>Checkout form</h2>
+            <div className='checkout'>Checkout form</div>
 
-            <form>
-                <div>
-                    <div>Name</div>
-                    <input value={name} onChange={event => {setName(event.target.value)}} ></input>
-                </div>
+            <div className='checkout-flex'>
+                <form className='input-checkout'>
+                    <div>
+                        <div className='title-input'>Name</div>
+                        <input 
+                            className='input-width'
+                            placeholder='Mark' 
+                            value={name} 
+                            onChange={event => {setName(event.target.value)}}>
+                        </input>
+                    </div>
 
-                <div>
-                    <div>Lastname</div>
-                    <input value={lastname} onChange={event => {setLastname(event.target.value)}}></input>
-                </div>
+                    <div>
+                        <div className='title-input'>Lastname</div>
+                        <input 
+                            className='input-width'
+                            placeholder='Otto' 
+                            value={lastname} 
+                            onChange={event => {setLastname(event.target.value)}}>
+                        </input>
+                    </div>
 
-                <div>
-                    <div>Email</div>
-                    <input type="email" value={email} onChange={event => {setEmail(event.target.value)}}></input>
-                </div>
+                    <div>
+                        <div className='title-input'>Email</div>
+                        <input 
+                            className='input-width'
+                            placeholder='someone123@hotmail.com' 
+                            value={email} 
+                            onChange={event => {setEmail(event.target.value)}}>
+                        </input>
+                    </div>
 
-                <div>
-                    <div>Repeat email</div>
-                    <input type="email" value={repeatEmail} onChange={event => {setRepeatEmail(event.target.value)}}></input>
-                </div>
+                    <div>
+                        <div className='title-input'>Repeat email</div>
+                        <input 
+                            className='input-width'
+                            placeholder='someone123@hotmail.com' 
+                            value={repeatEmail} 
+                            onChange={event => {setRepeatEmail(event.target.value)}}>
+                        </input>
+                    </div>
 
-                {
-                    name !== "" &&
-                    lastname !== "" && 
-                    email !== "" && 
-                    repeatEmail !== "" && 
-                    email === repeatEmail &&
-                    <button onClick={handleCreateOrder}>Finalize order</button>
-                }
-            </form>
+                    {
+                        name !== "" &&
+                        lastname !== "" && 
+                        email !== "" && 
+                        repeatEmail !== "" && 
+                        email === repeatEmail &&
+                        <button className='finalize-order' onClick={handleCreateOrder}>Finalize order</button>
+                    }
+                </form>
+            </div>
 
         </div>
     )

@@ -43,7 +43,7 @@ const Cart = () => {
             {total() !== 0 &&
             <div>
                 <div className='total'>Total: ${total()}</div>
-                <div><button className='eliminate-cart'>Eliminate Cart</button></div>
+                {/* <div><button className='eliminate-cart'>Eliminate Cart</button></div> */}
             </div>}
         </div>
     )
