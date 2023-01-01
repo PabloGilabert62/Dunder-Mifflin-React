@@ -34,7 +34,12 @@ const ItemDetailContainer = () => {
   }, [prodsId])
 
   if(loading){
-    return <h1>Loading...</h1>
+    return(
+      <button className="spinner-margin btn btn-primary" type="button" disabled>
+        <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        Loading...
+      </button>
+    )  
   }
 
   // if(error){

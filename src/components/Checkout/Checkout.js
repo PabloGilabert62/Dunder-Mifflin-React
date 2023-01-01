@@ -85,7 +85,10 @@ const Checkout = () => {
     }
     if(loading){
         return(
-            <h1>Loading order...</h1>
+            <button className="spinner-margin btn btn-primary" type="button" disabled>
+                <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                Loading...
+            </button>
         ) 
     }
 
