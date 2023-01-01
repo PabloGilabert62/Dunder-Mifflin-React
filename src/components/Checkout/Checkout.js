@@ -67,7 +67,7 @@ const Checkout = () => {
                 clearCart()
                 Swal.fire({
                     title: 'Thanks to buy in Dunder Mifflin!',
-                    html: '<video className="buy-video" src="../../../public/images/michael-sprays.mp4" loop autoplay></video>',
+                    html: '<video class="buy-video" src="../images/michael-sprays.mp4" loop autoplay></video>',
                     background: 'rgb(29, 29, 29)',
                     color: 'white',
                     confirmButtonText: "Great!",
@@ -106,12 +106,12 @@ const Checkout = () => {
 
                 <div>
                     <div>Email</div>
-                    <input value={email} onChange={event => {setEmail(event.target.value)}}></input>
+                    <input type="email" value={email} onChange={event => {setEmail(event.target.value)}}></input>
                 </div>
 
                 <div>
                     <div>Repeat email</div>
-                    <input value={repeatEmail} onChange={event => {setRepeatEmail(event.target.value)}}></input>
+                    <input type="email" value={repeatEmail} onChange={event => {setRepeatEmail(event.target.value)}}></input>
                 </div>
 
                 {
