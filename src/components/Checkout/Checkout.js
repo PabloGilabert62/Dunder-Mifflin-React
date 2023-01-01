@@ -65,6 +65,15 @@ const Checkout = () => {
                 const orderAdded = await addDoc(orderRef, orderObjects)
 
                 clearCart()
+                Swal.fire({
+                    title: 'Thanks to buy in Dunder Mifflin!',
+                    html: '<video className="buy-video" src="../../../public/images/michael-sprays.mp4" loop autoplay></video>',
+                    background: 'rgb(29, 29, 29)',
+                    color: 'white',
+                    confirmButtonText: "Great!",
+                    confirmButtonColor: "rgb(6, 76, 156)",
+                    allowOutsideClick: false
+                })
                 navigate("/")
                 console.log(orderAdded.id)
             }
