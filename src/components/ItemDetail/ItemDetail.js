@@ -4,6 +4,7 @@ import ItemCount from "../ItemCount/ItemCount";
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import { FavoritesContext } from '../../context/FavoritesContext';
+import Swal from 'sweetalert2';
 
 const ItemDetail = ({ prods }) => {
 
@@ -12,6 +13,14 @@ const ItemDetail = ({ prods }) => {
 
     const handleAddToCart = (quantity) => {
         addItems(prods,quantity)
+        return(
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Items added to the cart!',
+                showConfirmButton: true
+            })
+        )
     }
 
     const isAdded = isInFavorites(prods.id)
