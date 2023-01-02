@@ -9,7 +9,7 @@ const Favorites = () => {
     
     return(
         <div>
-            <h1 className='title-fav'>Favorite items</h1>
+            <h1 className='title-fav animate__animated animate__backInUp'>Favorite items</h1>
             {favorites.map(favorite => {
                 return(
                     <div className='cards-details-flex-fav'>
@@ -22,6 +22,10 @@ const Favorites = () => {
                     </div>
                 )
             })}
+            <span className="footer-">
+                <img className="footer-logo" src='/images/DunderMifflinLogo.png' alt="Dunder Mifflin Paper Company Logo"/>
+                <span className="text-footer">Dunder Mifflin Company Since 2008</span>
+            </span>
         </div>
     )
 }

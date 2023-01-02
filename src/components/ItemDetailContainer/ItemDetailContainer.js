@@ -6,7 +6,7 @@ import NavbarCategory from '../NavbarCategory/NavbarCategory';
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getProdsById } from '../../services/firebase/firestore/prods';
-import { useAsync } from '../../hooks/useAsync';
+// import { useAsync } from '../../hooks/useAsync';
 
 const ItemDetailContainer = () => {
 
@@ -49,6 +49,10 @@ const ItemDetailContainer = () => {
     <div>
       <NavbarCategory/>
       <ItemDetail prods={prods}/>
+      <span className="footer-">
+        <img className="footer-logo" src='/images/DunderMifflinLogo.png' alt="Dunder Mifflin Paper Company Logo"/>
+        <span className="text-footer">Dunder Mifflin Company Since 2008</span>
+      </span>
     </div>
   )
 }

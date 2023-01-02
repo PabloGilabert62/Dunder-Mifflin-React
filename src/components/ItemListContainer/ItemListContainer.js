@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 import { getProds } from "../../services/firebase/firestore/prods";
 import { useEffect } from "react";
 import { useState } from "react";
-import { useAsync } from '../../hooks/useAsync';
+// import { useAsync } from '../../hooks/useAsync';
 
 const ItemListContainer = ({initial}) => {
 
@@ -49,7 +49,17 @@ const ItemListContainer = ({initial}) => {
     return(
         <div>
             <NavbarCategory/>
+
+            <div id="audio-desktop" className="animate__animated animate__backInUp">
+                <audio src="../images/the office theme.mp3" controls></audio>
+            </div>
+
             <ItemList prods={prods}/>
+            
+            <span className="footer-">
+                <img className="footer-logo" src='/images/DunderMifflinLogo.png' alt="Dunder Mifflin Paper Company Logo"/>
+                <span className="text-footer">Dunder Mifflin Company Since 2008</span>
+            </span>
         </div>
     )
 }

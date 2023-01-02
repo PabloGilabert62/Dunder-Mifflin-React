@@ -45,6 +45,10 @@ const Cart = () => {
                 <div className='total'>Total: ${total()}</div>
                 {/* <div><button className='eliminate-cart'>Eliminate Cart</button></div> */}
             </div>}
+            <span className="footer-">
+                <img className="footer-logo" src='/images/DunderMifflinLogo.png' alt="Dunder Mifflin Paper Company Logo"/>
+                <span className="text-footer">Dunder Mifflin Company Since 2008</span>
+            </span>
         </div>
     )
 }

@@ -1,0 +1,21 @@
+.text-contact{
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 10%;
+    color: white;
+    font-size: 130%;
+    text-align: center;
+    font-weight: 600;
+}
+
+.text-contact-last{
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 18%;
+    color: white;
+    font-size: 130%;
+    text-align: center;
+    font-weight: 600;
+}

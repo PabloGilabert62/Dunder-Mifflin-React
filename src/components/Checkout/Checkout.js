@@ -3,10 +3,9 @@ import React from 'react';
 import { useState } from 'react';
 import { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
-import { collection, getDocs, query, where, documentId, writeBatch, addDoc, updateDoc } from 'firebase/firestore';
+import { collection, getDocs, query, where, documentId, writeBatch, addDoc } from 'firebase/firestore';
 import { db } from '../../services/firebase/firebaseConfig';
 import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const Checkout = () => {
