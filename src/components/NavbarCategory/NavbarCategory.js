@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 
 const NavbarCategory = () => {
     return(
-        <div>
+        <div className='animate__animated animate__backInUp'>
             <p className='title-category'>See our products below!</p>
             <div className='flex-category'>
 

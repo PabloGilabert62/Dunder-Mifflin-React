@@ -85,6 +85,7 @@ const Checkout = () => {
     }
     if(loading){
         return(
+            // SPINNER
             <button className="spinner-margin btn btn-primary" type="button" disabled>
                 <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                 Loading...
@@ -93,11 +94,13 @@ const Checkout = () => {
     }
 
     return(
-        <div>
+        // CHECKOUT FORM
+        <div className='animate__animated animate__backInUp'>
             <div className='checkout'>Checkout form</div>
 
             <div className='checkout-flex'>
                 <form className='input-checkout'>
+                    {/* NAME */}
                     <div>
                         <div className='title-input'>Name</div>
                         <input 
@@ -108,6 +111,7 @@ const Checkout = () => {
                         </input>
                     </div>
 
+                    {/* LASTNAME */}
                     <div>
                         <div className='title-input'>Lastname</div>
                         <input 
@@ -118,6 +122,7 @@ const Checkout = () => {
                         </input>
                     </div>
 
+                    {/* EMAIL */}
                     <div>
                         <div className='title-input'>Email</div>
                         <input 
@@ -128,6 +133,7 @@ const Checkout = () => {
                         </input>
                     </div>
 
+                    {/* EMAIL VERIFICATION */}
                     <div>
                         <div className='title-input'>Repeat email</div>
                         <input 

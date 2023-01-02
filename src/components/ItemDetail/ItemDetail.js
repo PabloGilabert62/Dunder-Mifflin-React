@@ -18,7 +18,7 @@ const ItemDetail = ({ prods }) => {
 
     //EACH CARD
     return (
-        <div className='flex-item-detail'>
+        <div className='flex-item-detail animate__animated animate__backInDown'>
             <div className='each-card'>
                 <img alt={prods.alt} src={prods.src}/>
                 <p className='font-title-item-detail'>{prods.title} ${prods.price}</p>

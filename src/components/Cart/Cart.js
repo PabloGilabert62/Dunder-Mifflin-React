@@ -9,9 +9,9 @@ const Cart = () => {
     const {items, removeItem, total} = useContext(CartContext)
     
     return(
-        <div>
+        <div className='animate__animated animate__backInUp'>
             {total() !== 0 &&
-            <span className='title'>Items in cart</span>}
+            <span className='title animate__animated animate__backInLeft'>Items in cart</span>}
             {items.map(item => {
                 return( 
                     <div className='flex-center'>

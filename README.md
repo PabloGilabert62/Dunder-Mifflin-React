@@ -17,3 +17,5 @@
 - [HTML]
 - [CSS]
 - [JSX]
+- [Animate.css]
+- [SweetAlert]

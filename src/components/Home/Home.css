@@ -1,0 +1,66 @@
+#audio-desktop{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2%;
+}
+
+.title-home{
+    margin-top: 2%;
+    margin-bottom: 3%;
+    font-size: 190%;
+    font-weight: 650;
+}
+
+.text-home{
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 18%;
+    color: white;
+    font-size: 130%;
+    text-align: center;
+    font-weight: 600;
+}
+
+.video-title{
+    font-size: 200%;
+    margin-bottom: 2%;
+    color: white;
+}
+
+.flex-video{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-home{
+    border: 5px solid rgb(6, 76, 156);
+    border-radius: 8px;
+    height: 50%;
+    width: 65%;
+}
+
+.footer-{
+    margin-top: 20%;
+    color: white;
+    background-color: rgb(6, 76, 156);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.footer-logo{
+    height: 120px;
+    width: 200px;
+}
+
+.text-footer{
+    text-align: center;
+    font-size: 120%;
+    font-weight: 650;
+    color: white;
+    background-color: rgb(6, 76, 156);
+    margin-left: 20%;
+}
