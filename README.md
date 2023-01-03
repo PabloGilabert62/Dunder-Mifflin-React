@@ -1,4 +1,7 @@
 ## Features
+The app is adapted for a screen of 1920x1080px
+Adaptation for 1366x768 and smartphones incoming!
+
 - /start to see a quick introduction to the app
 - /prods to see all the products with categories
 - /all shows all the products
