@@ -14,6 +14,7 @@
 
 ## Tech
 - [React.JS]
+- [Bootstrap]
 - [HTML]
 - [CSS]
 - [JSX]
