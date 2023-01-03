@@ -14,12 +14,7 @@ const ItemDetail = ({ prods }) => {
     const handleAddToCart = (quantity) => {
         addItems(prods,quantity)
         return(
-            Swal.fire({
-                position: 'top-end',
-                icon: 'success',
-                title: 'Items added to the cart!',
-                showConfirmButton: true
-            })
+            Swal.fire('Items added to the cart!')
         )
     }
 
@@ -27,6 +22,7 @@ const ItemDetail = ({ prods }) => {
 
     //EACH CARD
     return (
+
         <div className='flex-item-detail animate__animated animate__backInDown'>
             <div className='each-card'>
                 <img alt={prods.alt} src={prods.src}/>

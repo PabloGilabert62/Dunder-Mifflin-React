@@ -47,6 +47,9 @@ const ItemDetailContainer = () => {
 
   return(
     <div>
+      <div id="audio-desktop" className="animate__animated animate__backInUp">
+        <audio src="../images/the office theme.mp3" controls></audio>
+      </div>
       <NavbarCategory/>
       <ItemDetail prods={prods}/>
       <span className="footer-">

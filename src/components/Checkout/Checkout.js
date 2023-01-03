@@ -144,8 +144,8 @@ const Checkout = () => {
                     </div>
 
                     {
-                        name !== "" &&
-                        lastname !== "" && 
+                        name !== "" && 
+                        lastname !== "" &&
                         email !== "" && 
                         repeatEmail !== "" && 
                         email === repeatEmail &&

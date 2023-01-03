@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { createContext } from "react";
+import Swal from "sweetalert2";
 
 export const FavoritesContext = createContext()
 
@@ -12,6 +13,7 @@ export const FavoritesProvider = ({children}) => {
         if(!isInFavorites(favToAdd.id)) {
             setFavorites([...favorites, favToAdd])
         }
+        Swal.fire('Added to favorites!')
     }
 
     const isInFavorites = (id) => {
@@ -21,6 +23,7 @@ export const FavoritesProvider = ({children}) => {
     const removeFavorites = (id) => {
         const updatedFavorites = favorites.filter(favorite => favorite.id !== id)
         setFavorites(updatedFavorites)
+        Swal.fire('Item remove from favorites')
     }
 
     return(

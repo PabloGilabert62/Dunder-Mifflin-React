@@ -8,7 +8,7 @@ const ItemCount = ({stock, initial, onAddToCart}) => {
     const [button, setButton] = useState(true)
 
     const handleSubstract = () => {
-        if (count > 1) {
+        if (count > 0) {
             setCount(count - 1);
         } 
     }
@@ -27,7 +27,7 @@ const ItemCount = ({stock, initial, onAddToCart}) => {
             {button &&
             <div>
                 <button onClick={handleAdd} className='buttonPlus'>+</button>
-                <button onClick={() => [count !== 0 && onAddToCart(count)][setButton(false)]} className='buttonAdd'>Add to cart</button>
+                <button onClick={() => [count !== 0 && onAddToCart(count)][count !== 0 && setButton(false)]} className='buttonAdd'>Add to cart</button>
                 <button onClick={handleSubstract} className='buttonMinus'>-</button>
             </div>}
            
