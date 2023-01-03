@@ -48,12 +48,13 @@ const ItemListContainer = ({initial}) => {
 
     return(
         <div>
-            <NavbarCategory/>
+            <p className='title-category animate__animated animate__backInUp'>See our products below!</p>
 
-            <div id="audio-desktop" className="animate__animated animate__backInUp">
+            <div className="audio-item animate__animated animate__backInUp">
                 <audio src="../images/the office theme.mp3" controls></audio>
             </div>
 
+            <NavbarCategory/>
             <ItemList prods={prods}/>
             
             <span className="footer-">

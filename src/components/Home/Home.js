@@ -8,7 +8,7 @@ const Home = () => {
                 <article>
                     <div className='title-home animate__animated animate__backInUp'>Home</div>
 
-                    <div id="audio-desktop" className="animate__animated animate__backInUp">
+                    <div className="audio-home animate__animated animate__backInUp">
                         <audio src="../images/the office theme.mp3" controls></audio>
                     </div>
 

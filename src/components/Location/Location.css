@@ -4,3 +4,16 @@
     margin-top: 2%;
     margin-bottom: 4%;
 }
+
+.map{
+    border: 5px solid rgb(6, 76, 156);
+    border-radius: 8px;
+    margin-top: 10%;
+    height: 500px;
+    width: 500px;
+}
+
+.audio-location{
+    margin-top: 12%;
+    margin-bottom: 12%;
+}
